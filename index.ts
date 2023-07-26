@@ -1,28 +1,26 @@
-console.log("Jala el typescript");
+console.log("Jala el typescript")
 //* ------- Variables de rutas ------- //
 import express from "express"
 const app = express()
 import path from "path"
-app.use(express.static(path.dirname + '/public'));
-
+app.use(express.static(path.dirname + "/public"))
 
 //* ------- Template engine ------- //
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs")
 // app.set('views', path.join(__dirname, './views/'));
-app.set('views','./src/views/');
+app.set("views", "./src/views/")
 
 //* const routes = require('./routers/main')
-import routes from "./routes/main"
-app.use('/',routes);
-
+import routes from "./src/routes/main"
+app.use("/", routes)
 
 //* ------- Cadena de ruta para error 404 ------- //
-app.use((_req:any,res:any,_next:any)=>{
-    res.status(404).render('not-found')
+app.use((_req: any, res: any, _next: any) => {
+  res.status(404).render("not-found")
 })
 
 //* ------- levantar servidor ------- //
 const port = process.env.PORT || 1689
-app.listen(port,()=>{
-    console.log('Servidor funcionando en http://localhost:'+port);
-});
+app.listen(port, () => {
+  console.log("Servidor funcionando en http://localhost:" + port)
+})
