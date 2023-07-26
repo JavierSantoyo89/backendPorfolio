@@ -4,8 +4,8 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const mainController = {
     index: (req, res) => {
         // res.send('jala')
-        // res.render('index')
-        res.status(200).json({ Total: 100 });
+        res.render('index');
+        // res.status(200).json({ Total: 100 })
     },
     notfound: (_req, res) => {
         res.render("not-found");

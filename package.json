@@ -8,7 +8,7 @@
     "dev": "nodemon ./src/index.ts && tsc -w",
     "build": "tsc && node ./dist/index.js",
     "start": "node ./dist/index.js",
-    "prueba":"tsc && node ./dist/index.js"
+    "vercel build":"tsc && node ./dist/index.js"
     
   },
   "author": "Javier Santoyo",
