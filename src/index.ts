@@ -1,4 +1,6 @@
+import { Request, Response, NextFunction } from "express"
 console.log("Jala el typescript")
+
 //* ------- Variables de rutas ------- //
 import express from "express"
 const app = express()
@@ -11,11 +13,11 @@ app.set("view engine", "ejs")
 app.set("views", "./src/views/")
 
 //* const routes = require('./routers/main')
-import routes from "./src/routes/main"
+import routes from "./routes/main"
 app.use("/", routes)
 
 //* ------- Cadena de ruta para error 404 ------- //
-app.use((_req: any, res: any, _next: any) => {
+app.use((_req: Request, res: Response, _next: NextFunction) => {
   res.status(404).render("not-found")
 })
 
@@ -24,3 +26,4 @@ const port = process.env.PORT || 1689
 app.listen(port, () => {
   console.log("Servidor funcionando en http://localhost:" + port)
 })
+
