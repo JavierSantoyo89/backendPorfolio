@@ -25,5 +25,5 @@ app.use((_req: Request, res: Response, _next: NextFunction) => {
 const port = process.env.PORT || 1689
 app.listen(port, () => {
   console.log("Servidor funcionando en http://localhost:" + port)
+  console.log("El puesto es: " + port)
 })
-
