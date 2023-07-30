@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 // app.set('views', path.join(__dirname, './views/'));
 app.set("views", "./src/views/");
 //* const routes = require('./routers/main')
-const main_1 = __importDefault(require("./src/routes/main"));
+const main_1 = __importDefault(require("./routes/main"));
 app.use("/", main_1.default);
 //* ------- Cadena de ruta para error 404 ------- //
 app.use((_req, res, _next) => {
