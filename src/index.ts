@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express"
-console.log("Jala el typescript")
 
 //* ------- Variables de rutas ------- //
 import express from "express"
@@ -24,6 +23,6 @@ app.use((_req: Request, res: Response, _next: NextFunction) => {
 //* ------- levantar servidor ------- //
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-  console.log("Servidor funcionando en http://localhost:" + PORT)
-  console.log("El puesto es: " + PORT)
+  // console.log("Servidor funcionando en http://localhost:" + PORT)
+  // console.log("El puesto es: " + PORT)
 })
