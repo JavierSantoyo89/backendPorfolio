@@ -1,9 +1,8 @@
-import { Request, Response, NextFunction } from "express"
-
 //* ------- Variables de rutas ------- //
 import express from "express"
-const app = express()
+import { Request, Response, NextFunction } from "express"
 import path from "path"
+const app = express()
 app.use(express.static(path.dirname + "/public"))
 
 //* ------- Template engine ------- //

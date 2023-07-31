@@ -3,7 +3,7 @@
     "module": "NodeNext",
     "moduleResolution": "Node16",
     "baseUrl": "src",
-    "outDir": "dist",
+    "outDir": "build",
     "sourceMap": true,
     "noImplicitAny": true
   },
