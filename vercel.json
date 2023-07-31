@@ -11,11 +11,5 @@
         "src": "/(.*)",
         "dest":"src/index.ts"
     }
-],
-    "cleanUrls": true,
-    "devCommand": "next dev",
-    "framework": "null",
-    "installCommand": "npm install",
-    "outputDirectory": "dist",
-  "public": true
+]
 }
