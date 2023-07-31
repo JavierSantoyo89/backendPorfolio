@@ -16,6 +16,6 @@
     "devCommand": "next dev",
     "framework": "null",
     "installCommand": "npm install",
-    "outputDirectory": "build",
+    "outputDirectory": "dist",
   "public": true
 }
