@@ -3,3 +3,4 @@ package-lock.json
 cypress/videos/
 dist
 build
+.vercel
