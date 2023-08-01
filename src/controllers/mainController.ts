@@ -5,8 +5,10 @@ const toThousand = (n: { toString: () => string }) =>
 
 const mainController = {
   index: (req: Request, res: Response) => {
-    res.send("jala")
-    // res.render("index")
+    res.render("index")
+    // res.status(200).send("Status: ok!")
+
+    // res.render("index")Argument of type 'string' is not assignable to parameter of type 'number'.ts(
 
     // res.status(200).json({ Total: 100 })
   },
