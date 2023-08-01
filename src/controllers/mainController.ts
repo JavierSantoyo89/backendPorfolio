@@ -5,8 +5,8 @@ const toThousand = (n: { toString: () => string }) =>
 
 const mainController = {
   index: (req: Request, res: Response) => {
-    // res.send('jala')
-    res.render('index')
+    res.send("jala")
+    // res.render("index")
 
     // res.status(200).json({ Total: 100 })
   },
