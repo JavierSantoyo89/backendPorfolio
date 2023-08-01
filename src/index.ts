@@ -2,7 +2,9 @@
 import express from "express"
 import { Request, Response, NextFunction } from "express"
 import path from "path"
+
 const app = express()
+
 app.use(express.static(path.dirname + "/public"))
 
 //* ------- Template engine ------- //
@@ -22,6 +24,6 @@ app.use((_req: Request, res: Response, _next: NextFunction) => {
 //* ------- levantar servidor ------- //
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-  // console.log("Servidor funcionando en http://localhost:" + PORT)
-  // console.log("El puesto es: " + PORT)
+  console.log("Servidor funcionando en http://localhost:" + PORT)
+  console.log("El puesto es: " + PORT)
 })

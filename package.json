@@ -2,14 +2,13 @@
   "name": "backendporfolio",
   "version": "1.0.0",
   "description": "Backend para proyectos de mi portafolio",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/index.ts && tsc -w",
-    "prueba": "nodemon ./dist/index.js",
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "node ./dist/index.js"
+    "start": "node ."
   },
   "author": "Javier Santoyo",
   "license": "ISC",
