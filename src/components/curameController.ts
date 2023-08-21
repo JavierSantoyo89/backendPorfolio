@@ -3,7 +3,7 @@ export const curameController = {
   // *---------------- Controladores para el index y CRUD de CurAME AC Mexico ---------------* //
   // ?======================================================================================== //
   index: (_req: any, res: any) => {
-    res.send('Este es el controlador de CurAME')
+    res.render('indexCurAME')
   },
 
   // ?---------------------------------------------------------------------------------------- //

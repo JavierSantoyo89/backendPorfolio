@@ -5,7 +5,7 @@ export const restaurantController = {
   // ?======================================================================================== //
 
   index: (_req: any, res: any) => {
-    res.send('Este es el controlador del restaurant')
+    res.render('indexRestaurant')
   },
 
   // ?---------------------------------------------------------------------------------------- //
