@@ -17,8 +17,11 @@ app.use(express.json())
 
 // Setup layout in EJS
 app.use(expressLayouts)
-app.set('views', path.join(__dirname, '/views'))
+app.set('views', path.join(__dirname, '/views/'))
 app.set('view engine', 'ejs')
+
+// ------- Ruta para hacer publica la carpeta "public" ------- //
+app.use(express.static(__dirname + './public/'))
 
 // ------- Direcciones raises de los proyectos ------- //
 app.use('/', mainRoute)
@@ -27,10 +30,10 @@ app.use('/metalmecanica', metalmecanicaRoute)
 app.use('/restaurant', restaurantRoute)
 
 // ------- levantar servidor ------- //
-const port = process.env.PORT || 1689
-app.listen(port, () => {
-  // console.log(`Server running on port ${PORT}`);
-  console.log(`server online http://localhost:${port}/`)
+const PORT = process.env.PORT || 1689
+app.listen(PORT, () => {
+  // console.log(`Server running on PORT ${PORT}`);
+  console.log(`server online http://localhost:${PORT}/`)
   console.log(
     `Hora: ${new Date().toLocaleTimeString()} Fecha: ${new Date().toLocaleDateString()}`
   )
