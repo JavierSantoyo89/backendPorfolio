@@ -1,5 +1,6 @@
+import { Request, Response } from "express"
 export const metalMecanicaController = {
-  index: (_req: any, res: any) => {
+  index: (_req: Request, res: Response) => {
   // ?---------------------------------------------------------------------------------------- //
   // *------------------- Controladores para el proyecto de metal mecanica ------------------* //
   // ?======================================================================================== //
@@ -9,27 +10,27 @@ export const metalMecanicaController = {
   // ?---------------------------------------------------------------------------------------- //
   // *----------------------- Controlador para crear un nuevo registro ----------------------* //
   // ?======================================================================================== //
-  create: (_req: any, res: any) => {
+  create: (_req: Request, res: Response) => {
     res.send('Este es el controlador de metal-mecanica create')
   },
 
   // ?---------------------------------------------------------------------------------------- //
   // *----------------------- Controlador para leer todos los registros ---------------------* //
   // ?======================================================================================== //
-  read: (_req: any, res: any) => {
+  read: (_req: Request, res: Response) => {
     res.send('Este es el controlador de metal-mecanica read')
   },
 
   // ?---------------------------------------------------------------------------------------- //
   // *----------------------- Controlador para actualizar un registro -----------------------* //
   // ?======================================================================================== //
-  update: (_req: any, res: any) => {
+  update: (_req: Request, res: Response) => {
     res.send('Este es el controlador de metal-mecanica update')
   },
   // ?---------------------------------------------------------------------------------------- //
   // *------------------------- Controlador para borrar un registro -------------------------* //
   // ?======================================================================================== //
-  delete: (_req: any, res: any) => {
+  delete: (_req: Request, res: Response) => {
     res.send('Este es el controlador de metal-mecanica delete')
   }
 }
