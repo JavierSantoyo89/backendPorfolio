@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model tblclient {
+  id_client  Int    @id @default(autoincrement())
+  company    String
+  RFC        String
+  address    String
+  cp         String
+  tel        String
+  telCel     String
+  fiscalMode String
+}
+
+model tblemployee {
+  id_employee Int    @id @default(autoincrement())
+  user_name   String
+  user_type   String
+}
+
+model tblfactura {
+  id_factura      Int      @id @default(autoincrement())
+  folio           String
+  no_orden_compra String
+  emition_date    DateTime
+  dateIn          DateTime
+  dateOut         DateTime
+  idClient        Int
+  id_product      Int
+  qtyFinish       Int
+}
+
+model tblhistoryprocess {
+  id_history_process   Int      @id @default(autoincrement())
+  name_history_process String
+  qty                  Int
+  date_history_process DateTime
+  id_user              Int
+}
+
+model tblprocess {
+  id_process         Int    @id @default(autoincrement())
+  name_process       String
+  id_history_process Int
+}
+
+model tblproduct {
+  id_product   Int    @id @default(autoincrement())
+  name_product String
+  id_process   Int
+  fileName     String
+  priceUnit    Int
+}

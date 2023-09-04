@@ -35,4 +35,4 @@ alctualiza un registro
 ----
 Borra un registro
 
-Hola david
+Hola david x2

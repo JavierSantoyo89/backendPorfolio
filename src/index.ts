@@ -12,12 +12,13 @@ import {
 import morgan from 'morgan'
 
 
+
 dotenv.config();
 const app = express();
 app.use(cors());
 app.use(morgan('dev'))
-app.use(express.json());
-// app.disable("x-powered-by"); // ------ Deshabilita el mostrarlo ----- //
+app.use(express.json());  //* In - out Json
+app.disable("x-powered-by"); // ------ Deshabilita el mostrarlo ----- //
 
 // Setup layout in EJS
 app.use(expressLayouts);
@@ -28,6 +29,10 @@ app.set("view engine", "ejs");
 // app.use((_req, res) => {
 //   res.status(404).json({ error: "Not found" });
 // });
+
+// ---- Configuracion previa para usar metodos post, put & delete ---- //
+app.use(express.urlencoded({ extended: false})); // convierte el form a objeto literal
+app.use(express.json()); // convierte a JSON
 
 // ------- Ruta para hacer publica la carpeta "public" ------- //
 app.use(express.static(__dirname + "./public/"));
@@ -44,5 +49,6 @@ app.listen(PORT, () => {
   console.log(`server online http://localhost:${PORT}/`);
   console.log(
     `Hora: ${new Date().toLocaleTimeString()} Fecha: ${new Date().toLocaleDateString()}`
+  
   );
 });
