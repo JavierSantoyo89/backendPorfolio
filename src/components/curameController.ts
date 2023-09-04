@@ -4,7 +4,7 @@ export const curameController = {
   // *---------------- Controladores para el index y CRUD de CurAME AC Mexico ---------------* //
   // ?======================================================================================== //
   index: (_req: Request, res: Response) => {
-    res.render('indexCurAME')
+    res.render('indexRestaurant')
   },
 
   // ?---------------------------------------------------------------------------------------- //

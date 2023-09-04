@@ -130,7 +130,8 @@ export const metalMecanicaController = {
   readAllEmployee: async (_req: Request, res: Response) => {
     async function main() {
       const employeeAll = await prisma.tblemployee.findMany();
-      res.json({ data: employeeAll, SearchAll: "Ok" }).status(200);
+      const countEmployee = await prisma.tblemployee.count()
+      res.json({ data: employeeAll, count: countEmployee, SearchAll: "Ok" }).status(200);
       console.log("Read all employees complete!!!");
     }
     main()
@@ -226,7 +227,7 @@ export const metalMecanicaController = {
   readAllProcess: (_req: Request, res: Response) => {
     async function main() {
       const employee = await prisma.tblemployee.findMany({});
-
+      
       res.json({ data: employee, SearchAll: "Ok" }).status(200);
       console.log(employee);
     }
@@ -299,14 +300,14 @@ export const metalMecanicaController = {
   //* =====================================================================================* //
 
   // *----------------- Controlador para leer todos los registros de employee --------------* //
-  readAllProduct: (_req: Request, res: Response) => {
+  readAllProduct: async(_req: Request, res: Response) => {
     // res.send('Este es el controlador de metal-mecanica read')
 
     res.json;
 
     async function main() {
       const employee = await prisma.tblemployee.findMany({});
-
+      
       res.json({ data: employee, SearchAll: "Ok" }).status(200);
       console.log(employee);
     }

@@ -1,0 +1,1 @@
+console.log("Prueba de javascript en view");

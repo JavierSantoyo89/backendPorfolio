@@ -57,3 +57,10 @@ model tblproduct {
   fileName     String
   priceUnit    Int
 }
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model tblstadistics {
+  idstadistics Int    @id @default(autoincrement())
+  status       String @db.VarChar(45)
+  name_status  String @db.VarChar(45)
+}

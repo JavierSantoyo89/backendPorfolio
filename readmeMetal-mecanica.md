@@ -2,13 +2,12 @@
 
 ## Estructura de sitio
 
-| Sitio | Link |
-| -------------: |:-------------|
-| Index | <http://localhost:1689/metalmecanica/> |
-| Insert  | <http://localhost:1689/metalmecanica/create> |
-| Read | <http://localhost:1689/metalmecanica/read> |
-| Update | <http://localhost:1689/metalmecanica/update> |
-| Delete | <http://localhost:1689/metalmecanica/delete> |
+| Sitio | Status | Descripción |
+| -------------: |:-------------|:-------------|
+| [Index](http://localhost:1689/) | Process | Muestra un general del backend junto a los proyectos disponibles |
+| [Metal-mecanica](http://localhost:1689/metalmecanica/)  |Process | Documentación básica (API CRUD) del proyecto metalmecánica |
+| [CurAME](http://localhost:1689/curame) |Process | Documentación básica (API CRUD) del proyecto CurAME |
+| [Frank's restaurant](http://localhost:1689/restaurant) |Process | Documentación básica (API CRUD) del proyecto restaurant |
 
 ### Detalle Index
 

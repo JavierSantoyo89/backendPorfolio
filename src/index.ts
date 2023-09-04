@@ -35,7 +35,7 @@ app.use(express.urlencoded({ extended: false})); // convierte el form a objeto l
 app.use(express.json()); // convierte a JSON
 
 // ------- Ruta para hacer publica la carpeta "public" ------- //
-app.use(express.static(__dirname + "./public/"));
+app.use(express.static(__dirname + "/public"));
 
 // ------- Direcciones raises de los proyectos ------- //
 app.use("/", mainRoute);
