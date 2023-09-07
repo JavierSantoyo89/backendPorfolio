@@ -11,11 +11,11 @@ metalmecanicaRoute.get('/prueba', metalMecanicaController.Prueba)
 
 //*  --------------------- CRUD section Client --------------------- *//
 
-metalmecanicaRoute.get('/process/detailall/', metalMecanicaController.readAllClient)
-metalmecanicaRoute.get('/process/detailone/:id', metalMecanicaController.readOneClient)
-metalmecanicaRoute.post('/process/create', metalMecanicaController.createClient)
-metalmecanicaRoute.patch('/process/update/:id', metalMecanicaController.updateClient)
-metalmecanicaRoute.delete('/process/delete/:id', metalMecanicaController.deleteOneClient)
+metalmecanicaRoute.get('/client/detailall/', metalMecanicaController.readAllClient)           //* OK
+metalmecanicaRoute.get('/client/detail/:id', metalMecanicaController.readOneClient)           //* OK
+metalmecanicaRoute.post('/client/create', metalMecanicaController.createClient)               //* OK
+metalmecanicaRoute.patch('/client/update/:id', metalMecanicaController.updateClient)          //* OK
+metalmecanicaRoute.delete('/client/delete/:id', metalMecanicaController.deleteOneClient)      //* OK
 
 //* ================================================================== *//
 
@@ -23,11 +23,11 @@ metalmecanicaRoute.delete('/process/delete/:id', metalMecanicaController.deleteO
 
 //*  --------------------- CRUD section Employee --------------------- *//
 
-metalmecanicaRoute.get('/employee/detailall', metalMecanicaController.readAllEmployee) //* OK
-metalmecanicaRoute.get('/employee/detail/:id', metalMecanicaController.readOneEmployee) //* Ok 
-metalmecanicaRoute.post('/employee/create', metalMecanicaController.createEmployee) //* OK
-metalmecanicaRoute.patch('/employee/update/:id', metalMecanicaController.updateEmployee) //* OK
-metalmecanicaRoute.delete('/employee/delete/:id', metalMecanicaController.deleteOneEmployee) //* OK
+metalmecanicaRoute.get('/employee/detailall', metalMecanicaController.readAllEmployee)        //* OK
+metalmecanicaRoute.get('/employee/detail/:id', metalMecanicaController.readOneEmployee)       //* OK 
+metalmecanicaRoute.post('/employee/create', metalMecanicaController.createEmployee)           //* OK
+metalmecanicaRoute.patch('/employee/update/:id', metalMecanicaController.updateEmployee)      //* OK
+metalmecanicaRoute.delete('/employee/delete/:id', metalMecanicaController.deleteOneEmployee)  //* OK
 
 //* ================================================================== *//
 
@@ -35,11 +35,11 @@ metalmecanicaRoute.delete('/employee/delete/:id', metalMecanicaController.delete
 
 //*  --------------------- CRUD section Process --------------------- *//
 
-metalmecanicaRoute.get('/process/detailall/', metalMecanicaController.readAllProcess)
-metalmecanicaRoute.get('/process/detailone/', metalMecanicaController.readOneProcess)
-metalmecanicaRoute.post('/process/create', metalMecanicaController.createProcess)
-metalmecanicaRoute.patch('/process/update/:id', metalMecanicaController.updateProcess)
-metalmecanicaRoute.delete('/process/delete/:id', metalMecanicaController.deleteOneProcess)
+metalmecanicaRoute.get('/process/detailall/', metalMecanicaController.readAllProcess)        //* OK
+metalmecanicaRoute.get('/process/detail/:id', metalMecanicaController.readOneProcess)        //* OK
+metalmecanicaRoute.post('/process/create', metalMecanicaController.createProcess)            //* OK
+metalmecanicaRoute.patch('/process/update/:id', metalMecanicaController.updateProcess)       //* OK
+metalmecanicaRoute.delete('/process/delete/:id', metalMecanicaController.deleteOneProcess)   //* OK
 
 //* ================================================================== *//
 
@@ -47,11 +47,11 @@ metalmecanicaRoute.delete('/process/delete/:id', metalMecanicaController.deleteO
 
 //*  --------------------- CRUD section Product --------------------- *//
 
-metalmecanicaRoute.get('/product/detailall/', metalMecanicaController.readAllProduct)
-metalmecanicaRoute.get('/product/detailone/:id', metalMecanicaController.readOneProduct)
-metalmecanicaRoute.post('/product/create', metalMecanicaController.createProduct)
-metalmecanicaRoute.patch('/product/update/:id', metalMecanicaController.updateProduct)
-metalmecanicaRoute.delete('/product/delete/:id', metalMecanicaController.deleteOneProduct)
+metalmecanicaRoute.get('/product/detailall/', metalMecanicaController.readAllProduct)        //* OK
+metalmecanicaRoute.get('/product/detail/:id', metalMecanicaController.readOneProduct)        //* OK
+metalmecanicaRoute.post('/product/create', metalMecanicaController.createProduct)            //* OK
+metalmecanicaRoute.patch('/product/update/:id', metalMecanicaController.updateProduct)       //* OK
+metalmecanicaRoute.delete('/product/delete/:id', metalMecanicaController.deleteOneProduct)   //* OK
 
 //* ================================================================== *//
 
@@ -59,11 +59,11 @@ metalmecanicaRoute.delete('/product/delete/:id', metalMecanicaController.deleteO
 
 //*  --------------------- CRUD section Facture --------------------- *//
 
-metalmecanicaRoute.get('/facture/detailall/', metalMecanicaController.readAllFacture)
-metalmecanicaRoute.get('/facture/detailone/:id', metalMecanicaController.readOneFacture)
-metalmecanicaRoute.post('/facture/create', metalMecanicaController.createFacture)
-metalmecanicaRoute.patch('/facture/update/:id', metalMecanicaController.updateFacture)
-metalmecanicaRoute.delete('Facture/delete/:id', metalMecanicaController.deleteOneFacture)
+metalmecanicaRoute.get('/bill/detailall/', metalMecanicaController.readAllFacture)           //* OK
+metalmecanicaRoute.get('/bill/detail/:id', metalMecanicaController.readOneFacture)           //* OK
+metalmecanicaRoute.post('/bill/create', metalMecanicaController.createFacture)               //* OK
+metalmecanicaRoute.patch('/bill/update/:id', metalMecanicaController.updateFacture)          //* OK
+metalmecanicaRoute.delete('/bill/delete/:id', metalMecanicaController.deleteOneFacture)      //* OK
 
 //* ================================================================== *//
 

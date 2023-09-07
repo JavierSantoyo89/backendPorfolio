@@ -8,14 +8,14 @@ datasource db {
 }
 
 model tblclient {
-  id_client  Int    @id @default(autoincrement())
-  company    String
-  RFC        String
-  address    String
-  cp         String
-  tel        String
-  telCel     String
-  fiscalMode String
+  id_client   Int    @id @default(autoincrement())
+  company     String
+  RFC         String
+  address     String
+  cp          String
+  tel         String
+  telcel      String
+  fiscal_mode String
 }
 
 model tblemployee {
@@ -24,43 +24,46 @@ model tblemployee {
   user_type   String
 }
 
-model tblfactura {
-  id_factura      Int      @id @default(autoincrement())
-  folio           String
-  no_orden_compra String
-  emition_date    DateTime
-  dateIn          DateTime
-  dateOut         DateTime
-  idClient        Int
-  id_product      Int
-  qtyFinish       Int
-}
-
 model tblhistoryprocess {
   id_history_process   Int      @id @default(autoincrement())
   name_history_process String
   qty                  Int
   date_history_process DateTime
-  id_user              Int
+  id_employee          Int
+  description          String   @db.VarChar(45)
+  id_process           Int
 }
 
 model tblprocess {
-  id_process         Int    @id @default(autoincrement())
-  name_process       String
-  id_history_process Int
+  id_process          Int     @id @default(autoincrement())
+  name_process        String
+  description_process String? @db.VarChar(45)
 }
 
 model tblproduct {
   id_product   Int    @id @default(autoincrement())
   name_product String
-  id_process   Int
-  fileName     String
-  priceUnit    Int
+  price_unit   Int?
+  file_name    String
 }
 
-/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model tblstadistics {
-  idstadistics Int    @id @default(autoincrement())
-  status       String @db.VarChar(45)
-  name_status  String @db.VarChar(45)
+  idstadistics Int      @id @default(autoincrement())
+  status       String   @db.VarChar(45)
+  crud         String   @db.VarChar(45)
+  table        String   @db.VarChar(45)
+  project      String   @db.VarChar(45)
+  datetime     DateTime @db.DateTime(0)
+}
+
+model tblbill {
+  id_bill         Int       @id @default(autoincrement())
+  folio           String
+  no_orden_compra String
+  emition_date    DateTime?
+  date_in         DateTime?
+  date_out        DateTime?
+  id_client       Int
+  id_product      Int
+  quantity_end    Int
 }

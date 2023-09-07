@@ -10,7 +10,8 @@ import {
   restaurantRoute,
 } from "./routes";
 import morgan from 'morgan'
-
+import mainController from "./components/mainController";
+let dateActual =  new Date()
 
 
 dotenv.config();
@@ -42,13 +43,13 @@ app.use("/", mainRoute);
 app.use("/curame", curameRoute);
 app.use("/metalmecanica", metalmecanicaRoute);
 app.use("/restaurant", restaurantRoute);
+app.use("/stadistics",mainController.stadistics)
 
 // ------- levantar servidor ------- //
 const PORT = process.env.PORT || 1689;
 app.listen(PORT, () => {
   console.log(`server online http://localhost:${PORT}/`);
   console.log(
-    `Hora: ${new Date().toLocaleTimeString()} Fecha: ${new Date().toLocaleDateString()}`
-  
-  );
+    `Hora: ${new Date().toLocaleTimeString()} Fecha: ${new Date().toLocaleDateString()}`);
+    console.log(`Hora del sistema: ${dateActual}`)
 });

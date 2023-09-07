@@ -1,22 +1,9 @@
 import { Request, Response } from "express";
 import { prisma } from "../db";
+
 let dateActual =  new Date()
 export const metalMecanicaController = {
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
   Prueba: async (_req: Request, res: Response) => {
     res.send("Este es el controlador de prueba");
   },
