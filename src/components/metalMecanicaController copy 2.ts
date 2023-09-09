@@ -1,9 +1,28 @@
 // import { Request, Response } from "express";
 // import { prisma } from "../db";
+// var dateActual =  new Date()
+// var TableName = ""
 
-// let dateActual =  new Date()
+// //* ----------------------- funcion para creal log en stadistics ---------------------- //
+// function Logs (TableName:any){
+//   console.log(TableName); 
+
+//   async function main(TableName:any) { 
+//   console.log(TableName);
+// }
+//       main(TableName)
+//       .then( async () => {
+//           const ok = await prisma.tblstadistics.create({ data: { status: "Ok", crud: "Read all", table: TableName, project: "Metal-Mecanica", datetime: dateActual }})
+//           console.log(ok);
+//           await prisma.$disconnect()
+//         })
+//       .catch(async () => {
+//           await prisma.tblstadistics.create({ data: { status: "Fail", crud: "Read All", table: TableName, project: "Metal-Mecanica", datetime: dateActual }, }) 
+//           await prisma.$disconnect()  
+//         })}
+// //* =================================================================================== //
+
 // export const metalMecanicaController = {
- 
 //   Prueba: async (_req: Request, res: Response) => {
 //     res.send("Este es el controlador de prueba");
 //   },
@@ -61,42 +80,9 @@
 
 //   // *----------------- Controlador para leer todos los registros de client --------------* //
 //   readAllClient:async (_req: Request, res: Response) => {
-    
-   
-//     async function main() {
-//       const clientAll = await prisma.tblclient.findMany();
-//       const countclient = await prisma.tblclient.count()
-//       res.json({ data: clientAll, count: countclient, SearchAll: "Ok" }).status(200);
-//       console.log("Read all employees complete!!!");
-//     }
-//     main()
-//     .then(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Ok",
-//           crud: "Read all",
-//           table: "tblclient",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })
-//       res.json().status(200);
-//       console.log(insertStadistics);
-//     })
-//     .catch(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Fail",
-//           crud: "Read All",
-//           table: "tblclient",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })  
-//       console.log(insertStadistics);
-//       res.json("Revisa si ingresaste los datos correctos").status(404)
-//       await prisma.$disconnect()
-//     });
+//     TableName = 'tblclient'
+//     res.json({ data: await prisma.tblclient.findMany(), count: await prisma.tblclient.count(), SearchAll: "Ok" }).status(200);
+//     Logs(TableName)
 //   },
 //   //* =====================================================================================* //
 
@@ -268,83 +254,19 @@
 //   //* =====================================================================================* //
 
 //   // *----------------- Controlador para leer todos los registros de employee --------------* //
-//   readAllEmployee: async (_req: Request, res: Response) => {
-//     async function main() {
-//       const employeeAll = await prisma.tblemployee.findMany();
-//       const countEmployee = await prisma.tblemployee.count()
-//       res.json({ data: employeeAll, count: countEmployee, SearchAll: "Ok" }).status(200);
-//       console.log("Read all employees complete!!!");
-//     }
-//     main()
-//     .then(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Ok",
-//           crud: "Read all",
-//           table: "tblemployee",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })
-//       res.json().status(200);
-//       console.log(insertStadistics);
-//     })
-//     .catch(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Fail",
-//           crud: "Read All",
-//           table: "tblemployee",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })  
-//       console.log(insertStadistics);
-//       res.json("Revisa si ingresaste los datos correctos").status(404)
-//       await prisma.$disconnect()
-//     });
+//   readAllEmployee:   async (_req: Request, res: Response) => {
+//     TableName = 'tblemployee'
+//     res.json({ data: await prisma.tblemployee.findMany(), count: await prisma.tblemployee.count(), SearchAll: "Ok" }).status(200);
+//     Logs(TableName)
 //   },
-
 //   //* =====================================================================================* //
 
 //   // *------------------------- Controlador para leer un registro -------------------------* //
 //   readOneEmployee: async (req: Request, res: Response) => {
-//     async function main() {
-//       const id = parseInt(req.params.id);
-//       const readIdEmploye = await prisma.tblemployee.findFirst({
-//         where: {id_employee: Number(id)},
-//       });
-//       res.json({readIdEmploye,findOne: "Ok"}).status(200);
-//       console.log("Read only employee complete!!!");
-//     }
-//     main()
-//     .then(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Ok",
-//           crud: "Read one",
-//           table: "tblemployee",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })
-//       res.json().status(200);
-//       console.log(insertStadistics);
-//     })
-//     .catch(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Fail",
-//           crud: "Read one",
-//           table: "tblemployee",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })  
-//       console.log(insertStadistics);
-//       res.json("Revisa si ingresaste los datos correctos").status(404)
-//       await prisma.$disconnect()
-//     });
+//     TableName = 'tblemployee'
+//     const id:  number = parseInt(req.params.id)
+//     res.json({data:await prisma.tblemployee.findFirst({where: {id_employee: Number(id)},}),findOne: "Ok"}).status(200)
+//     Logs(TableName)
 //   },
 //   //* =====================================================================================* //
 
@@ -476,40 +398,9 @@
 
 //   // *----------------- Controlador para leer todos los registros de process --------------* //
 //   readAllProcess: async (_req: Request, res: Response) => {
-//     async function main() {
-//       const processAll = await prisma.tblprocess.findMany();
-//       const countProcess = await prisma.tblprocess.count()
-//       res.json({ data: processAll, count: countProcess, SearchAll: "Ok" }).status(200);
-//       console.log("Read all employees complete!!!");
-//     }
-//     main()
-//     .then(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Ok",
-//           crud: "Read all",
-//           table: "tblprocess",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })
-//       res.json().status(200);
-//       console.log(insertStadistics);
-//     })
-//     .catch(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Fail",
-//           crud: "Read All",
-//           table: "tbleprocess",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })  
-//       console.log(insertStadistics);
-//       res.json("Revisa si ingresaste los datos correctos").status(404)
-//       await prisma.$disconnect()
-//     });
+//     TableName = 'tblprocess'
+//     res.json({ data: await prisma.tblprocess.findMany(), count: await prisma.tblprocess.count(), SearchAll: "Ok" }).status(200);
+//     Logs(TableName)
 //   },
 //   //* =====================================================================================* //
 
@@ -682,41 +573,9 @@
 
 //   // *----------------- Controlador para leer todos los registros de product --------------* //
 //   readAllProduct: async (_req: Request, res: Response) => {
-//     async function main() {
-//       const producttAll = await prisma.tblproduct.findMany();
-//       const countProduct = await prisma.tblproduct.count()
-//       res.json({ data: producttAll, count: countProduct, SearchAll: "Ok" }).status(200);
-//       console.log("Read all employees complete!!!");
-//     }
-//     main()
-//     .then(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Ok",
-//           crud: "Read all",
-//           table: "tblproduct",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })
-//       res.json().status(200);
-//       console.log(insertStadistics);
-//     })
-//     .catch(async (e) => {
-//       console.error(e)
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Fail",
-//           crud: "Read All",
-//           table: "tblproduct",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })  
-//       console.log(insertStadistics);
-//       res.json("Revisa si ingresaste los datos correctos").status(404)
-//       await prisma.$disconnect()
-//     });
+//     TableName = 'tblProduct'
+//     res.json({ data: await prisma.tblproduct.findMany(), count: await prisma.tblproduct.count(), SearchAll: "Ok" }).status(200);
+//     Logs(TableName)
 //   },
 //   //* =====================================================================================* //
 
@@ -890,42 +749,10 @@
 //   //* =====================================================================================* //
 
 //   // *----------------- Controlador para leer todos los registros de bill --------------* //
-//   readAllFacture: async (_req: Request, res: Response) => {
-//     async function main() {
-//       const billAll = await prisma.tblbill.findMany();
-//       const countBill = await prisma.tblbill.count()
-//       res.json({ data: billAll, count: countBill, SearchAll: "Ok" }).status(200);
-//       console.log("Read all bill's complete!!!");
-//     }
-//     main()
-//     .then(async () => {
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Ok",
-//           crud: "Read all",
-//           table: "tblbill",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })
-//       res.json().status(200);
-//       console.log(insertStadistics);
-//     })
-//     .catch(async (e) => {
-//       console.error(e)
-//       const insertStadistics = await prisma.tblstadistics.create({
-//         data: {
-//           status: "Fail",
-//           crud: "Read All",
-//           table: "tblbill",
-//           project: "Metal-Mecanica",
-//           datetime: dateActual
-//         },
-//       })  
-//       console.log(insertStadistics);
-//       res.json("Revisa si ingresaste los datos correctos").status(404)
-//       await prisma.$disconnect()
-//     });
+//   readAllFacture:async (_req: Request, res: Response) => {
+//     TableName = 'tblbill'
+//     res.json({ data: await prisma.tblbill.findMany(), count: await prisma.tblbill.count(), SearchAll: "Ok" }).status(200);
+//     Logs(TableName)
 //   },
 //   //* =====================================================================================* //
 

@@ -21,6 +21,64 @@
 //   }
 
 
+// //* --- Funciona busqueda por ID
+// import { Request, Response } from "express";
+// import { prisma } from "../db";
+// var dateActual = new Date();
+
+// var TableName:string = "";
+// var dataQuerys: any = null;
+// var ErrorQuery: any = null;
+// //*------------
+
+// function Logs(TableName: any) {
+//   console.log(TableName);
+
+//   async function main(TableName: string, dataQuerys: any) {
+//     dataQuerys;
+//     console.log(TableName);
+//   }
+//   main(TableName, dataQuerys)
+//     .then(async () => {
+//       // console.log("Jalo el escribir: " + dataQuerys );
+
+//       const ok = await prisma.tblstadistics.create({
+//         data: {
+//           status: "Ok",
+//           crud: "Read all",
+//           table: TableName,
+//           project: "Metal-Mecanica",
+//           datetime: dateActual,
+//         },
+//       });
+//       console.log(ok);
+//       await prisma.$disconnect();
+//     })
+//     .catch(async () => {
+//       // console.log("error al escribir" + dataQuerys);
+
+//       ErrorQuery;
+//       await prisma.tblstadistics.create({
+//         data: {
+//           status: "Fail",
+//           crud: "Read All",
+//           table: TableName,
+//           project: "Metal-Mecanica",
+//           datetime: dateActual,
+//         },
+//       });
+//       await prisma.$disconnect();
+//     });
+// }
+//*---------
+
+
+
+
+
+
+
+
 
 //   readAllEmployee: {
 //     let nameTable = "tblemployee"
