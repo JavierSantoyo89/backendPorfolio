@@ -10,7 +10,7 @@
   <body>
     <h1>Metal Mecanica backend</h1>
     <p>
-      Este Proyecto está enfocado a empresa metal mecánicas que requieren tener
+      Este Proyecto está enfocado a empresa metal mecánica que requieren tener
       un control sobre su producción mostrando que producto están trabajando y
       en que parte del proceso está el mismo. Tanto por los administrativos de
       la empresa como los clientes.
@@ -25,16 +25,16 @@
     </p>
 
     <ul>
-      <li>Clientes</li>
-      <li>Productos</li>
-      <li>Procesos</li>
-      <li>Historial de procesos</li>
-      <li>Empleados</li>
-      <li>Facturas</li>
+      <li><a href="#Clientes">Clientes</a></li>
+      <li><a href="#Productos">Productos</a></li>
+      <li><a href="#Procesos">Procesos</a></li>
+      <li><a href="#HistorialProcesos">Historial de procesos</a></li>
+      <li><a href="#Empleados">Empleados</a></li>
+      <li><a href="#Bill">Facturas</a></li>
     </ul>
 
     <div class="container">
-      <h3>Clientes</h3>
+      <h3 id="Clientes">Clientes</h3>
       <p>
         Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
         de clientes, tanto para la empresa como para el cliente.
@@ -95,18 +95,11 @@
       </div>
       <div class="containerTable">
         <h4>Buscar todos los clientes (Read)</h4>
-
-        <input
-          type="text"
-          readonly
-          value="http://localhost:1689/metalmecanica/client/detailall"
-          id="readAllClient"
-        />
-        <button onclick="copyClipBoard('readAllClient')">Copy text</button>
-
-        <a href="http://localhost:1689/metalmecanica/client/detailall"
-          >http://localhost:1689/metalmecanica/client/detailall</a
-        >
+<div id="contenedorLink">
+  <input id="readAllClient" type="text" readonly value="http://localhost:1689/metalmecanica/client/detailall" >
+  <button onclick="copyClipBoard('readAllClient')">  <img id='copyImg' src='images/copy-alt-svgrepo-com.svg' alt='copy'></button>
+  <!-- <button onclick="copyClipBoard('readAllClient')">Copy text</button> -->
+</div>
         <table>
           <tr>
             <th>Columna</th>
@@ -183,7 +176,7 @@
     </div>
 
     <div class="container">
-      <h3>Productos</h3>
+      <h3 id="Productos">Productos</h3>
       <p>
         Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
         de cambios en productos, tanto para la empresa como para el cliente.
@@ -312,7 +305,7 @@
     </div>
 
     <div class="container">
-      <h3>Procesos</h3>
+      <h3 id="Procesos">Procesos</h3>
       <p>
         Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
         de cambios en productos, tanto para la empresa como para el cliente.
@@ -439,5 +432,411 @@
         </table>
       </div>
     </div>
+
+    <div class="container">
+      <h3 id="HistorialProcesos">Historial de Procesos</h3>
+      <p>
+        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
+        historial de proceos, en el cual se muestra por cuantos procesos paso un producto incluyendo hora y nombre del usuario.
+      </p>
+      <br />
+      <div class="containerTable">
+        <h4>Ingresar nuevo producto (Create)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/create"
+          >http://localhost:1689/metalmecanica/product/create</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <td>id_product</td>
+            <td>Int</td>
+            <td>Llave primaria, No null, Autoincremental</td>
+          </tr>
+          <tr>
+            <td>name_product</td>
+            <td>Varchar(191)</td>
+            <td>No null</td>
+          </tr>
+          <tr>
+            <td>price_unit</td>
+            <td>Int</td>
+            <td>No null</td>
+          </tr>
+          <tr>
+            <td>file_name</td>
+            <td>Varchar(191)</td>
+            <td>No null</td>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Buscar todos los productos (Read)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/detailall"
+          >http://localhost:1689/metalmecanica/product/detailall</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>N/Necesario</th>
+            <th>N/Necesario</th>
+            <th>N/Necesario</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Buscar solo un cliente (Read)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/detail/[:id]"
+          >http://localhost:1689/metalmecanica/product/detail/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>Integer</th>
+            <th>Ingresa el valor numerico para realizar la busqueda</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Actualizar los datos de un producto (Update)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/update/[id]"
+          >http://localhost:1689/metalmecanica/client/product/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>Integer</th>
+            <th>Llave primaria, no null, autoincremental</th>
+          </tr>
+          <tr>
+            <th>name_product</th>
+            <th>Varchar(191)</th>
+            <th>Ingresa el nombre del producto</th>
+          </tr>
+          <tr>
+            <th>price_unit</th>
+            <th>Int</th>
+            <th>Ingresa el precio por unidad</th>
+          </tr>
+          <tr>
+            <th>file_name</th>
+            <th>Varchar(191)</th>
+            <th>Ingresa el nombre del archivo del producto</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Borrar los datos de un producto (Delete)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/delete/[id]"
+          >http://localhost:1689/metalmecanica/product/delete/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id_client</th>
+            <th>Integer</th>
+            <th>Ingresa el valor numerico para realizar el borrado</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="Empleados">Empleadps</h3>
+      <p>
+        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
+        historial de proceos, en el cual se muestra por cuantos procesos paso un producto incluyendo hora y nombre del usuario.
+      </p>
+      <br />
+      <div class="containerTable">
+        <h4>Ingresar nuevo producto (Create)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/create"
+          >http://localhost:1689/metalmecanica/product/create</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <td>id_product</td>
+            <td>Int</td>
+            <td>Llave primaria, No null, Autoincremental</td>
+          </tr>
+          <tr>
+            <td>name_product</td>
+            <td>Varchar(191)</td>
+            <td>No null</td>
+          </tr>
+          <tr>
+            <td>price_unit</td>
+            <td>Int</td>
+            <td>No null</td>
+          </tr>
+          <tr>
+            <td>file_name</td>
+            <td>Varchar(191)</td>
+            <td>No null</td>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Buscar todos los productos (Read)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/detailall"
+          >http://localhost:1689/metalmecanica/product/detailall</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>N/Necesario</th>
+            <th>N/Necesario</th>
+            <th>N/Necesario</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Buscar solo un cliente (Read)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/detail/[:id]"
+          >http://localhost:1689/metalmecanica/product/detail/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>Integer</th>
+            <th>Ingresa el valor numerico para realizar la busqueda</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Actualizar los datos de un producto (Update)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/update/[id]"
+          >http://localhost:1689/metalmecanica/client/product/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>Integer</th>
+            <th>Llave primaria, no null, autoincremental</th>
+          </tr>
+          <tr>
+            <th>name_product</th>
+            <th>Varchar(191)</th>
+            <th>Ingresa el nombre del producto</th>
+          </tr>
+          <tr>
+            <th>price_unit</th>
+            <th>Int</th>
+            <th>Ingresa el precio por unidad</th>
+          </tr>
+          <tr>
+            <th>file_name</th>
+            <th>Varchar(191)</th>
+            <th>Ingresa el nombre del archivo del producto</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Borrar los datos de un producto (Delete)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/delete/[id]"
+          >http://localhost:1689/metalmecanica/product/delete/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id_client</th>
+            <th>Integer</th>
+            <th>Ingresa el valor numerico para realizar el borrado</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <h3 id="Bill">Facturas</h3>
+      <p>
+        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
+        historial de proceos, en el cual se muestra por cuantos procesos paso un producto incluyendo hora y nombre del usuario.
+      </p>
+      <br />
+      <div class="containerTable">
+        <h4>Ingresar nuevo producto (Create)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/create"
+          >http://localhost:1689/metalmecanica/product/create</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <td>id_product</td>
+            <td>Int</td>
+            <td>Llave primaria, No null, Autoincremental</td>
+          </tr>
+          <tr>
+            <td>name_product</td>
+            <td>Varchar(191)</td>
+            <td>No null</td>
+          </tr>
+          <tr>
+            <td>price_unit</td>
+            <td>Int</td>
+            <td>No null</td>
+          </tr>
+          <tr>
+            <td>file_name</td>
+            <td>Varchar(191)</td>
+            <td>No null</td>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Buscar todos los productos (Read)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/detailall"
+          >http://localhost:1689/metalmecanica/product/detailall</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>N/Necesario</th>
+            <th>N/Necesario</th>
+            <th>N/Necesario</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Buscar solo un cliente (Read)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/detail/[:id]"
+          >http://localhost:1689/metalmecanica/product/detail/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>Integer</th>
+            <th>Ingresa el valor numerico para realizar la busqueda</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Actualizar los datos de un producto (Update)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/update/[id]"
+          >http://localhost:1689/metalmecanica/client/product/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>Integer</th>
+            <th>Llave primaria, no null, autoincremental</th>
+          </tr>
+          <tr>
+            <th>name_product</th>
+            <th>Varchar(191)</th>
+            <th>Ingresa el nombre del producto</th>
+          </tr>
+          <tr>
+            <th>price_unit</th>
+            <th>Int</th>
+            <th>Ingresa el precio por unidad</th>
+          </tr>
+          <tr>
+            <th>file_name</th>
+            <th>Varchar(191)</th>
+            <th>Ingresa el nombre del archivo del producto</th>
+          </tr>
+        </table>
+      </div>
+      <div class="containerTable">
+        <h4>Borrar los datos de un producto (Delete)</h4>
+        <a href="http://localhost:1689/metalmecanica/product/delete/[id]"
+          >http://localhost:1689/metalmecanica/product/delete/[:id]</a
+        >
+        <table>
+          <tr>
+            <th>Columna</th>
+            <th>Tipo de dato</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <th>id_client</th>
+            <th>Integer</th>
+            <th>Ingresa el valor numerico para realizar el borrado</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    
+    <button class="btnScrollTop"id="btn_ScrollTop"><img src="/images/up-arrow-circle-svgrepo-com.svg"/></button>
+
+     <script> 
+     <!--Necesario para el efecto scroll top-->
+        const Btn_ScrollTop = document.getElementById("btn_ScrollTop")
+  Btn_ScrollTop.addEventListener("click", ()=>{
+    window.scrollTo({
+      top:0,
+      behavior: "smooth"
+    })
+  })
+  window.onscroll = () =>{
+      if (window.scrollY < 213){
+        Btn_ScrollTop.classList.remove("btnScrollTop-on")
+      }else{
+        Btn_ScrollTop.classList.add("btnScrollTop-on")  
+      }
+    }
+    </script>
   </body>
 </html>
