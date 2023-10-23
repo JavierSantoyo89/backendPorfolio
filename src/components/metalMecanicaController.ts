@@ -264,11 +264,11 @@ export const metalMecanicaController = {
     CRUDtype = "Read only one record";
     let Id = req.params.id;
     var valoresAceptados = /^[0-9]+$/;
-        if (Id.match(valoresAceptados)){
+        if (Id.match(valoresAceptados) && Number(Id)>0){
           dataQuerys = res.json({data: await prisma.tblprocess.findFirst({where: { id_process: Number(Id) },}),findOne: "Ok"}).status(200);
           Logs(TableName);
         } else {
-          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
+          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(400)
        } 
   },
   //* =====================================================================================* //
@@ -469,7 +469,7 @@ export const metalMecanicaController = {
     TableName = "tblbill";
     Id = req.params.id;
         var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
-        if (Id.match(valoresAceptados)) {
+        if (Id.match(valoresAceptados && Id>0)) {
         dataQuerys = res.json({
           data: await prisma.tblbill.update({
             where: { id_bill: Number(Id) },
@@ -481,7 +481,7 @@ export const metalMecanicaController = {
         Logs(TableName); 
       } else {
         // Si el valor no es numerico
-        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
+        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(400)
     }
   },
 };

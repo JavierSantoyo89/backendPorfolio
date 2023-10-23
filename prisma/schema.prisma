@@ -7,21 +7,33 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model tblbill {
+  id_bill         Int      @id @default(autoincrement())
+  folio           String
+  no_orden_compra String
+  emition_date    DateTime
+  dateIn          DateTime
+  date_out        DateTime
+  id_client       Int
+  id_product      Int
+  qty_finish      Int
+}
+
 model tblclient {
-  id_client   Int    @id @default(autoincrement())
-  company     String
-  RFC         String
-  address     String
-  cp          String
-  tel         String
-  telcel      String
-  fiscal_mode String
+  id_client  Int    @id @default(autoincrement())
+  company    String
+  RFC        String
+  address    String
+  cp         String
+  tel        String
+  telCel     String
+  fiscalMode String
 }
 
 model tblemployee {
   id_employee Int    @id @default(autoincrement())
-  user_name   String
-  user_type   String
+  userName    String
+  userType    String
 }
 
 model tblhistoryprocess {
@@ -29,41 +41,28 @@ model tblhistoryprocess {
   name_history_process String
   qty                  Int
   date_history_process DateTime
-  id_employee          Int
-  description          String   @db.VarChar(45)
-  id_process           Int
+  id_user              Int
 }
 
 model tblprocess {
-  id_process          Int     @id @default(autoincrement())
-  name_process        String
-  description_process String? @db.VarChar(45)
+  id_process         Int    @id @default(autoincrement())
+  name_process       String
+  id_history_process Int
 }
 
 model tblproduct {
   id_product   Int    @id @default(autoincrement())
   name_product String
-  price_unit   Int?
-  file_name    String
+  id_process   Int
+  fileName     String
+  priceUnit    Int
 }
 
 model tblstadistics {
-  idstadistics Int      @id @default(autoincrement())
-  status       String   @db.VarChar(45)
-  crud         String   @db.VarChar(45)
-  table        String   @db.VarChar(45)
-  project      String   @db.VarChar(45)
-  datetime     DateTime @db.DateTime(0)
-}
-
-model tblbill {
-  id_bill         Int       @id @default(autoincrement())
-  folio           String
-  no_orden_compra String
-  emition_date    DateTime?
-  date_in         DateTime?
-  date_out        DateTime?
-  id_client       Int
-  id_product      Int
-  quantity_end    Int
+  id_stadistics Int       @id @default(autoincrement())
+  status        String?   @db.VarChar(45)
+  crud          String?   @db.VarChar(45)
+  table         String?   @db.VarChar(45)
+  project       String?   @db.VarChar(45)
+  datetime      DateTime? @db.DateTime(0)
 }
