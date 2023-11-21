@@ -12,7 +12,7 @@ model tblbill {
   folio           String
   no_orden_compra String
   emition_date    DateTime
-  dateIn          DateTime
+  date_in         DateTime
   date_out        DateTime
   id_client       Int
   id_product      Int
@@ -20,20 +20,20 @@ model tblbill {
 }
 
 model tblclient {
-  id_client  Int    @id @default(autoincrement())
-  company    String
-  RFC        String
-  address    String
-  cp         String
-  tel        String
-  telCel     String
-  fiscalMode String
+  id_client   Int    @id @default(autoincrement())
+  company     String
+  rfc         String
+  address     String
+  cp          String
+  tel         String
+  telcel      String
+  fiscal_mode String
 }
 
 model tblemployee {
   id_employee Int    @id @default(autoincrement())
-  userName    String
-  userType    String
+  user_name   String
+  user_type   String
 }
 
 model tblhistoryprocess {
@@ -54,8 +54,8 @@ model tblproduct {
   id_product   Int    @id @default(autoincrement())
   name_product String
   id_process   Int
-  fileName     String
-  priceUnit    Int
+  file_name    String
+  price_unit   Int
 }
 
 model tblstadistics {
