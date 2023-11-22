@@ -18,7 +18,7 @@ dotenv.config();
 const app = express();
 app.use(cors(
   {
-    origin: process.env.FRONTEND_URL,
+    origin: "https://backendportfolio-r0uf.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }
