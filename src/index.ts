@@ -16,7 +16,13 @@ let dateActual =  new Date()
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin: process.env.FRONTEND_URL,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }
+));
 app.use(morgan('dev'))
 app.use(express.json());  //* In - out Json
 app.disable("x-powered-by"); // ------ Deshabilita el mostrarlo ----- //
