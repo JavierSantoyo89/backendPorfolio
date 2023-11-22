@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import expressLayouts from "express-ejs-layouts";
-import path from "path";
+// import path from "path";
 import dotenv from "dotenv";
 import {
   mainRoute,
@@ -29,7 +29,9 @@ app.disable("x-powered-by"); // ------ Deshabilita el mostrarlo ----- //
 
 // Setup layout in EJS
 app.use(expressLayouts);
-app.set("views", path.join(__dirname, "/views/"));
+app.set("views","./src/views/");
+// app.set("views", path.join(__dirname, "/views"));
+// app.use(express.static( '/views'));
 app.set("view engine", "ejs");
 
 //! ------- Ruta de error en API's ------- //
@@ -42,7 +44,9 @@ app.use(express.urlencoded({ extended: false})); // convierte el form a objeto l
 app.use(express.json()); // convierte a JSON
 
 // ------- Ruta para hacer publica la carpeta "public" ------- //
-app.use(express.static(__dirname + "/public"));
+app.use(express.static("./src/public"));
+// app.use(express.static(path.join(__dirname + '/public')));
+
 
 // ------- Direcciones raises de los proyectos ------- //
 app.use("/", mainRoute);
