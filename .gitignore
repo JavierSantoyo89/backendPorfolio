@@ -4,8 +4,8 @@
 *.iml
 
 # production
-/build
-build
+# /build
+# build
 
 
 # dependencies
