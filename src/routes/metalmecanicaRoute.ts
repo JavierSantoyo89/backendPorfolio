@@ -51,6 +51,17 @@ metalmecanicaRoute.delete('/product/delete/:id', metalMecanicaController.deleteO
 //* ================================================================== *//
 
 
+//*  --------------------- CRUD section history --------------------- *//
+
+metalmecanicaRoute.get('/history/detailall/', metalMecanicaController.readAllHistory)        //! OK *
+metalmecanicaRoute.get('/history/detail/:id', metalMecanicaController.readOneHistory)        //! OK *
+metalmecanicaRoute.post('/history/create', metalMecanicaController.createHistory)            //! OK *
+metalmecanicaRoute.patch('/history/update/:id', metalMecanicaController.updateHistory)       //! OK *
+metalmecanicaRoute.delete('/history/delete/:id', metalMecanicaController.deleteOnehistory)   //! OK *
+
+//* ================================================================== */
+
+
 
 //*  --------------------- CRUD section Bill --------------------- *//
 

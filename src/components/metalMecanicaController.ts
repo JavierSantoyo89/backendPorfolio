@@ -484,4 +484,90 @@ export const metalMecanicaController = {
         ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(400)
     }
   },
-};
+
+  
+  // ?---------------------------------------------------------------------------------------- //
+  //*  -------------------------------- CRUD section History process ------------------------------- *//
+  // ?---------------------------------------------------------------------------------------- //
+
+  // *----------------- Controlador para crear un nuevo registro bill ------------------* //
+  createHistory: async (req: Request, res: Response) => {
+    dataQuerys = res.json({
+      data: await prisma.tblhistoryprocess.create({
+        data: req.body,}),create:"OK",}).status(200);
+        Logs(TableName);
+  },
+
+  // *----------------- Controlador para leer todos los registros de bill --------------* //
+  readAllHistory: async (_req: Request, res: Response) => {
+    TableName = "tbltblhistoryprocess";
+    CRUDtype = "Read all records";
+    dataQuerys = res
+      .json({
+        data: await prisma.tblhistoryprocess.findMany(),
+        count: await prisma.tblhistoryprocess.count(),
+        SearchAll: "Ok",
+      })
+      .status(200);
+    Logs(TableName);
+  },
+
+  // *------------------------- Controlador para leer un registro de bill-------------------------* //
+  readOneHistory: async (req: Request, res: Response) => {
+    TableName = "tblhistoryprocess";
+    CRUDtype = "Read only one record";
+    let Id = req.params.id;
+    var valoresAceptados = /^[0-9]+$/;
+        if (Id.match(valoresAceptados)){
+          dataQuerys = res.json({data: await prisma.tblhistoryprocess.findFirst({where: { id_history_process: Number(Id) },}),findOne: "Ok"}).status(200);
+          Logs(TableName);
+        } else {
+          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
+       } 
+  },
+
+  // *------------------------- Controlador para leer un registro de bill ------------------------* //
+  deleteOnehistory: async (req: Request, res: Response) => {
+    TableName = "tblhistoryprocess";
+    CRUDtype = "Delete one record";
+    Id = req.params.id;
+    var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+    if (Id.match(valoresAceptados)) {
+      let Id = +req.params.id;
+      dataQuerys = res.json({
+          data: await prisma.tblhistoryprocess.delete({
+            where: { id_history_process: Number(Id) },
+          }),
+          delete: "Ok",
+        })
+        .status(200);
+      Logs(TableName);
+    } else {
+      // Si el valor no es numerico
+      ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404);
+    }
+  },
+
+  // *---------------------- Controlador para actualizar un registro de bill ----------------------* //
+  updateHistory: async (req: Request, res: Response) => {
+    CRUDtype = "Update record ";
+    TableName = "tblhistoryprocess";
+    Id = req.params.id;
+        var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+        if (Id.match(valoresAceptados && Id>0)) {
+        dataQuerys = res.json({
+          data: await prisma.tblhistoryprocess.update({
+            where: { id_history_process: Number(Id) },
+            data: req.body,
+          }),
+          Update: "Ok", 
+        })
+        .status(200);
+        Logs(TableName); 
+      } else {
+        // Si el valor no es numerico
+        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(400)
+    }
+
+},
+}
