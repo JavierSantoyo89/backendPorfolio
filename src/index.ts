@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import expressLayouts from "express-ejs-layouts";
-import path from "path";
+// import path from "path";
 import dotenv from "dotenv";
 import {
   mainRoute,
