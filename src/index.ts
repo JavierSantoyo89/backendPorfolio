@@ -29,8 +29,8 @@ app.disable("x-powered-by"); // ------ Deshabilita el mostrarlo ----- //
 
 // Setup layout in EJS
 app.use(expressLayouts);
-// app.set("views","./src/views/");
-app.set("views", path.join(__dirname, "/views"));
+app.set("views","./src/views/");
+// app.set("views", path.join(__dirname, "/views"));
 // app.use(express.static( '/views'));
 app.set("view engine", "ejs");
 
