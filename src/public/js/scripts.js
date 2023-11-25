@@ -29,3 +29,32 @@ function Scroll_Top(){
     }
 
 }
+
+
+// Hace que los detalles se puedan cerrar al abrir otro
+const detalles = document.querySelectorAll('details');
+detalles.forEach((detalle) => {
+  detalle.addEventListener('click', () => {
+    detalles.forEach((d) => {
+      if (d !== detalle) {
+        d.removeAttribute('open');
+      }
+    });
+  });
+});
+
+  //  <!--Necesario para el efecto scroll top-->
+      const Btn_ScrollTop = document.getElementById("btn_ScrollTop")
+Btn_ScrollTop.addEventListener("click", ()=>{
+  window.scrollTo({
+    top:0,
+    behavior: "smooth"
+  })
+})
+window.onscroll = () =>{
+    if (window.scrollY < 213){
+      Btn_ScrollTop.classList.remove("btnScrollTop-on")
+    }else{
+      Btn_ScrollTop.classList.add("btnScrollTop-on")
+    }
+  }

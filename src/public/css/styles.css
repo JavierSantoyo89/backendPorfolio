@@ -1,19 +1,28 @@
 *{
     margin:0px;
     padding:0px;
-   
     box-sizing: border-box;
     scroll-behavior: smooth;
 
 }
 
 body{
-    /* background-color: #1d2125; */
     background-image: url("../images/monterrey.jpg");
-    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* max-height: 100vmax ; */
     background-attachment: fixed;
-    color: #d8d8d8
+    background-color: black;
+    background-position: bottom;
 }
+#containerGeneral{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+
 
 table {
     border: #b2b2b2 1px solid;
@@ -33,16 +42,20 @@ table {
     width:auto;
   }
  
-  #contenedorLink{
-    display: inline-block;
+  /* #contenedorLink{
+    /* display: inline-block; 
     min-width: 100px;
-  }
+  } */
   
   #textoLink{
     background-color: red;
     width: 100%;
   }
 
+  svg{
+    width: 40px;
+    height: 40px;
+  }
 .iconAPI {
   width: 40px;
   height: 40px;
@@ -51,8 +64,8 @@ table {
 
   .btnScrollTop{
     position: fixed;
-    /* width: 60px;
-    height: 60px; */
+     width: 60px;
+    height: 60px; 
     
     right: 20px;
     background: rgb(166, 166, 166);
@@ -75,7 +88,7 @@ table {
     height: 60px; */
     bottom: 60px;
     right: 20px;
-    background: gray;
+    /* background: gray; */
     border-radius: 100%;
     cursor: pointer;
     /* transform: translate(0); */
@@ -102,20 +115,22 @@ margin: 20px;
 #servicePanel{
   display: inline-flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin-right:80px;
   padding: 10px;
   gap: 50px;
 }
 
-footer
-{
-    /* position:absolute; */
-    background-color: black;
-    margin-top:50px;
-    width:100%;
-    /* background-color:white; */
+
+footer{
+  background-color: black;
+align-items: center;
+  text-align: center;
+  color: white;
+    position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
 #footerLink {
     color:brown

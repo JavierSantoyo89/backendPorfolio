@@ -3,1059 +3,1079 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="/js/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <title>Documentación Metal Mecanica</title>
   </head>
 
   <body>
-    <section>
-      <h1>Metal Mecanica backend</h1>
-      <p>
-        Este Proyecto está enfocado a empresa metal mecánica que requieren tener
-        un control sobre su producción mostrando que producto están trabajando y
-        en que parte del proceso está el mismo. Tanto por los administrativos de
-        la empresa como los clientes.
-      </p>
-      <br />
-      <h2>API's</h2>
-      <p>
-        Este Proyecto está enfocado a empresa metal mecánicas que requieren
-        tener un control sobre su producción mostrando que producto están
-        trabajando y en que parte del proceso está el mismo. Tanto por los
-        administrativos de la empresa como los clientes.
-      </p>
-    </section>
-    <section class="Services">
-<h2>Selecciona uno de los servicios disponibles</h2>
-      <section id="servicePanel">
-                 
-            <a href="#Clientes">
-              <svg class="iconAPI" viewBox="0 0 24 24">
-                <path
-                  d="M12 13.75C10.8628 13.75 9.75106 13.4128 8.80547 12.781C7.85989 12.1491 7.1229 11.2511 6.6877 10.2004C6.25249 9.14976 6.13862 7.99362 6.36049 6.87823C6.58235 5.76284 7.12999 4.73829 7.93414 3.93414C8.73829 3.12999 9.76284 2.58235 10.8782 2.36049C11.9936 2.13862 13.1498 2.25249 14.2004 2.6877C15.2511 3.1229 16.1491 3.85989 16.781 4.80547C17.4128 5.75106 17.75 6.86276 17.75 8C17.7474 9.52419 17.1407 10.9852 16.0629 12.0629C14.9852 13.1407 13.5242 13.7474 12 13.75ZM12 3.75C11.1594 3.75 10.3377 3.99926 9.63883 4.46626C8.93992 4.93325 8.39519 5.59701 8.07351 6.3736C7.75184 7.15018 7.66768 8.00472 7.83167 8.82914C7.99565 9.65356 8.40043 10.4108 8.9948 11.0052C9.58917 11.5996 10.3464 12.0044 11.1709 12.1683C11.9953 12.3323 12.8498 12.2482 13.6264 11.9265C14.403 11.6048 15.0668 11.0601 15.5337 10.3612C16.0007 9.66227 16.25 8.84057 16.25 8C16.2474 6.87364 15.7987 5.79417 15.0023 4.99772C14.2058 4.20126 13.1264 3.75264 12 3.75Z"
-                />
-                <path
-                  d="M21 21.75C20.8019 21.7474 20.6126 21.6676 20.4725 21.5275C20.3324 21.3874 20.2526 21.1981 20.25 21C20.2474 19.078 19.4827 17.2355 18.1236 15.8764C16.7645 14.5173 14.922 13.7526 13 13.75H11C9.07799 13.7526 7.23546 14.5173 5.8764 15.8764C4.51733 17.2355 3.75265 19.078 3.75 21C3.75 21.1989 3.67098 21.3897 3.53033 21.5303C3.38968 21.671 3.19891 21.75 3 21.75C2.80109 21.75 2.61032 21.671 2.46967 21.5303C2.32902 21.3897 2.25 21.1989 2.25 21C2.25265 18.6802 3.17537 16.4561 4.81574 14.8157C6.45611 13.1754 8.68017 12.2526 11 12.25H13C15.3198 12.2526 17.5439 13.1754 19.1843 14.8157C20.8246 16.4561 21.7474 18.6802 21.75 21C21.7474 21.1981 21.6676 21.3874 21.5275 21.5275C21.3874 21.6676 21.1981 21.7474 21 21.75Z"
-                />
-              </svg>
-              Clientes</a
-            >
-         
-            <a href="#Productos">
-              <svg class="iconAPI" viewBox="0 0 256 253">
-                <path
-                  d="M122,219H76v-45h18v14h10v-14h18V219z M182,219h-46v-45h18v14h10v-14h18V219z M152,160h-46v-45h18v14h10v-14h18V160z M2,69
-  c0,13.678,9.625,25.302,22,29.576V233H2v18h252v-18h-22V98.554c12.89-3.945,21.699-15.396,22-29.554v-8H2V69z M65.29,68.346
-  c0,6.477,6.755,31.47,31.727,31.47c21.689,0,31.202-19.615,31.202-31.47c0,11.052,7.41,31.447,31.464,31.447
-  c21.733,0,31.363-20.999,31.363-31.447c0,14.425,9.726,26.416,22.954,30.154V233H42V98.594C55.402,94.966,65.29,82.895,65.29,68.346
-  z M222.832,22H223V2H34v20L2,54h252L222.832,22z"
-                />
-              </svg>
-              Productos</a
-            >
-          
-            <a href="#Procesos">
-              <svg class="iconAPI" viewBox="0 0 18.566 18.566">
-                <path
-                  d="M17.705,11.452h-0.73v-3.65c0.929-0.352,1.591-1.247,1.591-2.299c0-1.359-1.102-2.46-2.461-2.46
-    c-1.044,0-1.936,0.651-2.291,1.568h-1.668V4.522c0-0.475-0.384-0.86-0.859-0.86h-5.2c-0.475,0-0.859,0.386-0.859,0.86V4.61H3.566
-    V2.924c0-0.475-0.385-0.86-0.859-0.86H1.24c-0.475,0-0.859,0.385-0.859,0.86v5.199c0,0.476,0.385,0.859,0.859,0.859h1.467
-    c0.474,0,0.859-0.384,0.859-0.859V5.9h1.663v0.089c0,0.475,0.384,0.86,0.859,0.86h5.199c0.476,0,0.859-0.385,0.859-0.86V5.9h1.533
-    c0.168,1.032,0.977,1.848,2.006,2.025v3.527h-3.179c-0.475,0-0.859,0.385-0.859,0.858v0.089H9.851v-1.955
-    c0-0.474-0.386-0.859-0.86-0.859H7.524c-0.475,0-0.859,0.386-0.859,0.859v1.955H4.833c-0.284-1.046-1.237-1.815-2.372-1.815
-    C1.102,10.584,0,11.686,0,13.044c0,1.359,1.102,2.46,2.461,2.46c1.136,0,2.088-0.769,2.372-1.815h1.832v1.955
-    c0,0.476,0.385,0.859,0.859,0.859h1.467c0.474,0,0.86-0.384,0.86-0.859v-1.955h1.796v0.089c0,0.476,0.385,0.859,0.859,0.859h5.199
-    c0.476,0,0.86-0.384,0.86-0.859v-1.467C18.565,11.837,18.18,11.452,17.705,11.452z"
-                />
-              </svg>
-              Procesos</a
-            >
-        
-            <a href="#HistorialProcesos">
-              <svg class="iconAPI" viewBox="0 0 512 512">
-                <path
-                  class="cls-1"
-                  d="M75.11,117h0A21.34,21.34,0,0,1,53.83,95.57V31.39A21.34,21.34,0,0,1,75.11,10h0A21.34,21.34,0,0,1,96.39,31.39V95.57A21.34,21.34,0,0,1,75.11,117Z"
-                />
-                <rect
-                  class="cls-1"
-                  height="64.17"
-                  width="319.22"
-                  x="96.39"
-                  y="31.39"
-                />
-                <rect
-                  class="cls-1"
-                  height="320.87"
-                  width="319.22"
-                  x="96.39"
-                  y="95.57"
-                />
-                <path
-                  class="cls-1"
-                  d="M34.34,39.08H53.83a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H34.34A24.34,24.34,0,0,1,10,63.54v-.13A24.34,24.34,0,0,1,34.34,39.08Z"
-                />
-                <path
-                  class="cls-1"
-                  d="M436.89,117h0a21.34,21.34,0,0,0,21.28-21.39V31.39A21.34,21.34,0,0,0,436.89,10h0a21.34,21.34,0,0,0-21.28,21.39V95.57A21.34,21.34,0,0,0,436.89,117Z"
-                />
-                <path
-                  class="cls-1"
-                  d="M482.51,39.08H502a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H482.51a24.34,24.34,0,0,1-24.34-24.34v-.13a24.34,24.34,0,0,1,24.34-24.34Z"
-                  transform="translate(960.17 126.96) rotate(-180)"
-                />
-                <path
-                  class="cls-1"
-                  d="M75.11,395h0a21.34,21.34,0,0,0-21.28,21.39v64.18A21.34,21.34,0,0,0,75.11,502h0a21.34,21.34,0,0,0,21.28-21.39V416.43A21.34,21.34,0,0,0,75.11,395Z"
-                />
-                <rect
-                  class="cls-1"
-                  height="64.17"
-                  width="319.22"
-                  x="96.39"
-                  y="416.43"
-                />
-                <path
-                  class="cls-1"
-                  d="M34.34,424.12H53.83a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H34.34A24.34,24.34,0,0,1,10,448.58v-.13A24.34,24.34,0,0,1,34.34,424.12Z"
-                />
-                <path
-                  class="cls-1"
-                  d="M436.89,395h0a21.34,21.34,0,0,1,21.28,21.39v64.18A21.34,21.34,0,0,1,436.89,502h0a21.34,21.34,0,0,1-21.28-21.39V416.43A21.34,21.34,0,0,1,436.89,395Z"
-                />
-                <path
-                  class="cls-1"
-                  d="M482.51,424.12H502a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H482.51a24.34,24.34,0,0,1-24.34-24.34v-.13a24.34,24.34,0,0,1,24.34-24.34Z"
-                  transform="translate(960.17 897.04) rotate(-180)"
-                />
-                <line
-                  class="cls-1"
-                  x1="143.41"
-                  x2="256"
-                  y1="140.11"
-                  y2="140.11"
-                />
-                <line
-                  class="cls-1"
-                  x1="143.41"
-                  x2="371.26"
-                  y1="186.47"
-                  y2="186.47"
-                />
-                <line
-                  class="cls-1"
-                  x1="143.41"
-                  x2="371.26"
-                  y1="232.82"
-                  y2="232.82"
-                />
-                <line
-                  class="cls-1"
-                  x1="143.41"
-                  x2="371.26"
-                  y1="279.18"
-                  y2="279.18"
-                />
-                <line
-                  class="cls-1"
-                  x1="143.41"
-                  x2="371.26"
-                  y1="325.53"
-                  y2="325.53"
-                />
-                <line
-                  class="cls-1"
-                  x1="256"
-                  x2="371.26"
-                  y1="371.89"
-                  y2="371.89"
-                />
-              </svg>
-              Historial de procesos</a
-            >
-         
-            <a href="#Empleados">
-              <svg class="iconAPI" viewBox="0 0 36 36">
-                <path
-                  d="M16.43,16.69a7,7,0,1,1,7-7A7,7,0,0,1,16.43,16.69Zm0-11.92a5,5,0,1,0,5,5A5,5,0,0,0,16.43,4.77Z"
-                />
-                <path
-                  d="M22,17.9A25.41,25.41,0,0,0,5.88,19.57a4.06,4.06,0,0,0-2.31,3.68V29.2a1,1,0,1,0,2,0V23.25a2,2,0,0,1,1.16-1.86,22.91,22.91,0,0,1,9.7-2.11,23.58,23.58,0,0,1,5.57.66Z"
-                />
-                <rect x="22.14" y="27.41" width="6.14" height="1.4" />
-                <path
-                  d="M33.17,21.47H28v2h4.17v8.37H18V23.47h6.3v.42a1,1,0,0,0,2,0V20a1,1,0,0,0-2,0v1.47H17a1,1,0,0,0-1,1V32.84a1,1,0,0,0,1,1H33.17a1,1,0,0,0,1-1V22.47A1,1,0,0,0,33.17,21.47Z"
-                />
-              </svg>
-              Empleados</a
-            >
-        
-            <a href="#Bill">
-              <svg class="iconAPI" viewBox="0 0 32 32">
-                <g data-name="18. Bill" id="_18._Bill">
-                  <path
-                    d="M16,7h2a1,1,0,0,0,0-2H17a1,1,0,0,0-2,0v.18A3,3,0,0,0,16,11a1,1,0,0,1,0,2H14a1,1,0,0,0,0,2h1a1,1,0,0,0,2,0v-.18A3,3,0,0,0,16,9a1,1,0,0,1,0-2Z"
-                  />
-                  <path
-                    d="M31,24H28V3a3,3,0,0,0-3-3H3A3,3,0,0,0,0,3V9a1,1,0,0,0,1,1H4V29a3,3,0,0,0,3,3H29a3,3,0,0,0,3-3V25A1,1,0,0,0,31,24ZM2,3A1,1,0,0,1,4,3V8H2ZM8,25v4a1,1,0,0,1-.31.71A.93.93,0,0,1,7,30a1,1,0,0,1-1-1V3a3,3,0,0,0-.18-1H25a1,1,0,0,1,1,1V24H9A1,1,0,0,0,8,25Zm22,4a1,1,0,0,1-.31.71A.93.93,0,0,1,29,30H9.83A3,3,0,0,0,10,29V26H30Z"
-                  />
-                  <path d="M17,19H9a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2Z" />
-                  <path d="M23,19H21a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z" />
-                </g></svg
-              >Facturas</a
-            >
-         
+    <div id="containerGeneral">
+      <section>
+        <h1>Metal Mecanica backend</h1>
+        <p>
+          Este Proyecto está enfocado a empresa metal mecánica que requieren tener
+          un control sobre su producción mostrando que producto están trabajando y
+          en que parte del proceso está el mismo. Tanto por los administrativos de
+          la empresa como los clientes.
+        </p>
+        <br />
+        <h2>API's</h2>
+        <p>
+          Este Proyecto está enfocado a empresa metal mecánicas que requieren
+          tener un control sobre su producción mostrando que producto están
+          trabajando y en que parte del proceso está el mismo. Tanto por los
+          administrativos de la empresa como los clientes.
+        </p>
       </section>
-    </section>
-
-    <div class="container">
-      <h3 id="Clientes">Clientes</h3>
-      <p>
-        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
-        de clientes, tanto para la empresa como para el cliente.
-      </p>
-      <br />
-      <div class="containerTable">
-        <h4>Ingresar nuevo cliente (Create)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/create"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/create</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <td>id_client</td>
-            <td>Int</td>
-            <td>Llave primaria, No null, Autoincremental</td>
-          </tr>
-          <tr>
-            <td>company</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>RFC</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>addres</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>cp</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>tel</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>telcel</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>fiscal_mode</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <section>
-          <h4>Buscar todos los clientes (Read)</h4>
-          <button onclick="copyClipBoard('readAllClient')">
-            <img
-              id="copyImg"
-              src="images/copy-alt-svgrepo-com.svg"
-              alt="copy"
-            />
-          </button>
+      <section class="Services">
+        <h2>Selecciona uno de los servicios disponibles</h2>
+        <section id="servicePanel">
+          <!-- Clientes -->
+          <details id="detalle1">
+            <summary>
+              <div>
+                <svg class="iconAPI" viewBox="0 0 24 24">
+                  <path
+                    d="M12 13.75C10.8628 13.75 9.75106 13.4128 8.80547 12.781C7.85989 12.1491 7.1229 11.2511 6.6877 10.2004C6.25249 9.14976 6.13862 7.99362 6.36049 6.87823C6.58235 5.76284 7.12999 4.73829 7.93414 3.93414C8.73829 3.12999 9.76284 2.58235 10.8782 2.36049C11.9936 2.13862 13.1498 2.25249 14.2004 2.6877C15.2511 3.1229 16.1491 3.85989 16.781 4.80547C17.4128 5.75106 17.75 6.86276 17.75 8C17.7474 9.52419 17.1407 10.9852 16.0629 12.0629C14.9852 13.1407 13.5242 13.7474 12 13.75ZM12 3.75C11.1594 3.75 10.3377 3.99926 9.63883 4.46626C8.93992 4.93325 8.39519 5.59701 8.07351 6.3736C7.75184 7.15018 7.66768 8.00472 7.83167 8.82914C7.99565 9.65356 8.40043 10.4108 8.9948 11.0052C9.58917 11.5996 10.3464 12.0044 11.1709 12.1683C11.9953 12.3323 12.8498 12.2482 13.6264 11.9265C14.403 11.6048 15.0668 11.0601 15.5337 10.3612C16.0007 9.66227 16.25 8.84057 16.25 8C16.2474 6.87364 15.7987 5.79417 15.0023 4.99772C14.2058 4.20126 13.1264 3.75264 12 3.75Z"
+                  />
+                  <path
+                    d="M21 21.75C20.8019 21.7474 20.6126 21.6676 20.4725 21.5275C20.3324 21.3874 20.2526 21.1981 20.25 21C20.2474 19.078 19.4827 17.2355 18.1236 15.8764C16.7645 14.5173 14.922 13.7526 13 13.75H11C9.07799 13.7526 7.23546 14.5173 5.8764 15.8764C4.51733 17.2355 3.75265 19.078 3.75 21C3.75 21.1989 3.67098 21.3897 3.53033 21.5303C3.38968 21.671 3.19891 21.75 3 21.75C2.80109 21.75 2.61032 21.671 2.46967 21.5303C2.32902 21.3897 2.25 21.1989 2.25 21C2.25265 18.6802 3.17537 16.4561 4.81574 14.8157C6.45611 13.1754 8.68017 12.2526 11 12.25H13C15.3198 12.2526 17.5439 13.1754 19.1843 14.8157C20.8246 16.4561 21.7474 18.6802 21.75 21C21.7474 21.1981 21.6676 21.3874 21.5275 21.5275C21.3874 21.6676 21.1981 21.7474 21 21.75Z"
+                  />
+                </svg>
+                <p>Clientes</p>
+              </div>
+            </summary>
+  
+            <div class="container">
+              <h3 id="Clientes">Clientes</h3>
+              <p>
+                Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
+                servicio de clientes, tanto para la empresa como para el cliente.
+              </p>
+              <br />
+              <div class="containerTable">
+                <h4>Ingresar nuevo cliente (Create)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/create"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/create</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <td>id_client</td>
+                    <td>Int</td>
+                    <td>Llave primaria, No null, Autoincremental</td>
+                  </tr>
+                  <tr>
+                    <td>company</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>RFC</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>addres</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>cp</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>tel</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>telcel</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>fiscal_mode</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <section>
+                  <h4>Buscar todos los clientes (Read)</h4>
+                  <button onclick="copyClipBoard('readAllClient')">
+                    <img
+                      id="copyImg"
+                      src="images/copy-alt-svgrepo-com.svg"
+                      alt="copy"
+                    />
+                  </button>
+                </section>
+  
+                <div id="contenedorLink">
+                  <input
+                    id="readAllClient"
+                    type="text"
+                    value="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detailall"
+                  />
+                  <!-- <button onclick="copyClipBoard('readAllClient')">Copy text</button> -->
+                </div>
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar solo un cliente (Read)</h4>
+                <button onclick="copyClipBoard('readIDClient')">Copy text</button>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]</a
+                >
+                <input
+                  type="text"
+                  value="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]"
+                  id="readIDClient"
+                />
+  
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar la busqueda</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Actualizar los datos de un cliente (Update)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/update/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/update/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>
+                      Ingresa el valor numerico para realizar la actualizacion
+                    </th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Borrar los datos de un cliente (Delete)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/delete/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/delete/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id_client</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar el borrado</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </details>
+  
+          <!-- Procesos -->
+          <details id="detalle2">
+            <summary>
+              <div>
+                <svg class="iconAPI" viewBox="0 0 18.566 18.566">
+                  <path
+                    d="M17.705,11.452h-0.73v-3.65c0.929-0.352,1.591-1.247,1.591-2.299c0-1.359-1.102-2.46-2.461-2.46
+  c-1.044,0-1.936,0.651-2.291,1.568h-1.668V4.522c0-0.475-0.384-0.86-0.859-0.86h-5.2c-0.475,0-0.859,0.386-0.859,0.86V4.61H3.566
+  V2.924c0-0.475-0.385-0.86-0.859-0.86H1.24c-0.475,0-0.859,0.385-0.859,0.86v5.199c0,0.476,0.385,0.859,0.859,0.859h1.467
+  c0.474,0,0.859-0.384,0.859-0.859V5.9h1.663v0.089c0,0.475,0.384,0.86,0.859,0.86h5.199c0.476,0,0.859-0.385,0.859-0.86V5.9h1.533
+  c0.168,1.032,0.977,1.848,2.006,2.025v3.527h-3.179c-0.475,0-0.859,0.385-0.859,0.858v0.089H9.851v-1.955
+  c0-0.474-0.386-0.859-0.86-0.859H7.524c-0.475,0-0.859,0.386-0.859,0.859v1.955H4.833c-0.284-1.046-1.237-1.815-2.372-1.815
+  C1.102,10.584,0,11.686,0,13.044c0,1.359,1.102,2.46,2.461,2.46c1.136,0,2.088-0.769,2.372-1.815h1.832v1.955
+  c0,0.476,0.385,0.859,0.859,0.859h1.467c0.474,0,0.86-0.384,0.86-0.859v-1.955h1.796v0.089c0,0.476,0.385,0.859,0.859,0.859h5.199
+  c0.476,0,0.86-0.384,0.86-0.859v-1.467C18.565,11.837,18.18,11.452,17.705,11.452z"
+                  />
+                  <p>Procesos</p>
+                </svg>
+              </div>
+            </summary>
+  
+            <div class="container">
+              <h3 id="Procesos">Procesos</h3>
+              <p>
+                Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
+                servicio de cambios en productos, tanto para la empresa como para
+                el cliente.
+              </p>
+              <br />
+              <div class="containerTable">
+                <h4>Ingresar un nuevo proceso (Create)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <td>id_product</td>
+                    <td>Int</td>
+                    <td>Llave primaria, No null, Autoincremental</td>
+                  </tr>
+                  <tr>
+                    <td>name_product</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>price_unit</td>
+                    <td>Int</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>file_name</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar todos los procesos (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar solo un proceso (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar la busqueda</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Actualizar los datos de un proceso (Update)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/update/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Llave primaria, no null, autoincremental</th>
+                  </tr>
+                  <tr>
+                    <th>name_product</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del producto</th>
+                  </tr>
+                  <tr>
+                    <th>price_unit</th>
+                    <th>Int</th>
+                    <th>Ingresa el precio por unidad</th>
+                  </tr>
+                  <tr>
+                    <th>file_name</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del archivo del producto</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Borrar los datos de un proceso (Delete)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id_client</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar el borrado</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </details>
+  
+          <!-- Productos -->
+          <details id="detalle3">
+            <summary>
+              <div>
+                <svg class="iconAPI" viewBox="0 0 256 253">
+                  <path
+                    d="M122,219H76v-45h18v14h10v-14h18V219z M182,219h-46v-45h18v14h10v-14h18V219z M152,160h-46v-45h18v14h10v-14h18V160z M2,69
+    c0,13.678,9.625,25.302,22,29.576V233H2v18h252v-18h-22V98.554c12.89-3.945,21.699-15.396,22-29.554v-8H2V69z M65.29,68.346
+    c0,6.477,6.755,31.47,31.727,31.47c21.689,0,31.202-19.615,31.202-31.47c0,11.052,7.41,31.447,31.464,31.447
+    c21.733,0,31.363-20.999,31.363-31.447c0,14.425,9.726,26.416,22.954,30.154V233H42V98.594C55.402,94.966,65.29,82.895,65.29,68.346
+    z M222.832,22H223V2H34v20L2,54h252L222.832,22z"
+                  />
+                </svg>
+                <p>Productos</p>
+              </div>
+            </summary>
+            <div class="container">
+              <h3 id="Procesos">Products</h3>
+              <p>
+                Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
+                servicio de cambios en productos, tanto para la empresa como para
+                el cliente.
+              </p>
+              <br />
+              <div class="containerTable">
+                <h4>Ingresar un nuevo proceso (Create)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <td>id_product</td>
+                    <td>Int</td>
+                    <td>Llave primaria, No null, Autoincremental</td>
+                  </tr>
+                  <tr>
+                    <td>name_product</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>price_unit</td>
+                    <td>Int</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>file_name</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar todos los procesos (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar solo un proceso (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar la busqueda</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Actualizar los datos de un proceso (Update)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/update/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Llave primaria, no null, autoincremental</th>
+                  </tr>
+                  <tr>
+                    <th>name_product</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del producto</th>
+                  </tr>
+                  <tr>
+                    <th>price_unit</th>
+                    <th>Int</th>
+                    <th>Ingresa el precio por unidad</th>
+                  </tr>
+                  <tr>
+                    <th>file_name</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del archivo del producto</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Borrar los datos de un proceso (Delete)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id_client</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar el borrado</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </details>
+  
+          <!-- Hitorial de procesos-->
+          <details id="detalle3">
+            <summary>
+              <div>
+                <svg class="iconAPI" viewBox="0 0 512 512">
+                  <path
+                    class="cls-1"
+                    d="M75.11,117h0A21.34,21.34,0,0,1,53.83,95.57V31.39A21.34,21.34,0,0,1,75.11,10h0A21.34,21.34,0,0,1,96.39,31.39V95.57A21.34,21.34,0,0,1,75.11,117Z"
+                  />
+                  <rect
+                    class="cls-1"
+                    height="64.17"
+                    width="319.22"
+                    x="96.39"
+                    y="31.39"
+                  />
+                  <rect
+                    class="cls-1"
+                    height="320.87"
+                    width="319.22"
+                    x="96.39"
+                    y="95.57"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M34.34,39.08H53.83a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H34.34A24.34,24.34,0,0,1,10,63.54v-.13A24.34,24.34,0,0,1,34.34,39.08Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M436.89,117h0a21.34,21.34,0,0,0,21.28-21.39V31.39A21.34,21.34,0,0,0,436.89,10h0a21.34,21.34,0,0,0-21.28,21.39V95.57A21.34,21.34,0,0,0,436.89,117Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M482.51,39.08H502a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H482.51a24.34,24.34,0,0,1-24.34-24.34v-.13a24.34,24.34,0,0,1,24.34-24.34Z"
+                    transform="translate(960.17 126.96) rotate(-180)"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M75.11,395h0a21.34,21.34,0,0,0-21.28,21.39v64.18A21.34,21.34,0,0,0,75.11,502h0a21.34,21.34,0,0,0,21.28-21.39V416.43A21.34,21.34,0,0,0,75.11,395Z"
+                  />
+                  <rect
+                    class="cls-1"
+                    height="64.17"
+                    width="319.22"
+                    x="96.39"
+                    y="416.43"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M34.34,424.12H53.83a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H34.34A24.34,24.34,0,0,1,10,448.58v-.13A24.34,24.34,0,0,1,34.34,424.12Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M436.89,395h0a21.34,21.34,0,0,1,21.28,21.39v64.18A21.34,21.34,0,0,1,436.89,502h0a21.34,21.34,0,0,1-21.28-21.39V416.43A21.34,21.34,0,0,1,436.89,395Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M482.51,424.12H502a0,0,0,0,1,0,0v48.8a0,0,0,0,1,0,0H482.51a24.34,24.34,0,0,1-24.34-24.34v-.13a24.34,24.34,0,0,1,24.34-24.34Z"
+                    transform="translate(960.17 897.04) rotate(-180)"
+                  />
+                  <line
+                    class="cls-1"
+                    x1="143.41"
+                    x2="256"
+                    y1="140.11"
+                    y2="140.11"
+                  />
+                  <line
+                    class="cls-1"
+                    x1="143.41"
+                    x2="371.26"
+                    y1="186.47"
+                    y2="186.47"
+                  />
+                  <line
+                    class="cls-1"
+                    x1="143.41"
+                    x2="371.26"
+                    y1="232.82"
+                    y2="232.82"
+                  />
+                  <line
+                    class="cls-1"
+                    x1="143.41"
+                    x2="371.26"
+                    y1="279.18"
+                    y2="279.18"
+                  />
+                  <line
+                    class="cls-1"
+                    x1="143.41"
+                    x2="371.26"
+                    y1="325.53"
+                    y2="325.53"
+                  />
+                  <line
+                    class="cls-1"
+                    x1="256"
+                    x2="371.26"
+                    y1="371.89"
+                    y2="371.89"
+                  />
+                </svg>
+                <p>Historial de procesos</p>
+              </div>
+            </summary>
+            <div class="container">
+              <h3 id="HistorialProcesos">Historial de Procesos</h3>
+              <p>
+                Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
+                servicio historial de proceos, en el cual se muestra por cuantos
+                procesos paso un producto incluyendo hora y nombre del usuario.
+              </p>
+              <br />
+              <div class="containerTable">
+                <h4>Ingresar nuevo producto (Create)</h4>
+                <a href="http://localhost:1689/metalmecanica/process/create"
+                  >http://localhost:1689/metalmecanica/product/create</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <td>id_product</td>
+                    <td>Int</td>
+                    <td>Llave primaria, No null, Autoincremental</td>
+                  </tr>
+                  <tr>
+                    <td>name_product</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>price_unit</td>
+                    <td>Int</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>file_name</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar todos los productos (Read)</h4>
+                <a href="http://localhost:1689/metalmecanica/product/detailall"
+                  >http://localhost:1689/metalmecanica/product/detailall</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar solo un cliente (Read)</h4>
+                <a href="http://localhost:1689/metalmecanica/product/detail/[:id]"
+                  >http://localhost:1689/metalmecanica/product/detail/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar la busqueda</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Actualizar los datos de un producto (Update)</h4>
+                <a href="http://localhost:1689/metalmecanica/product/update/[id]"
+                  >http://localhost:1689/metalmecanica/client/product/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Llave primaria, no null, autoincremental</th>
+                  </tr>
+                  <tr>
+                    <th>name_product</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del producto</th>
+                  </tr>
+                  <tr>
+                    <th>price_unit</th>
+                    <th>Int</th>
+                    <th>Ingresa el precio por unidad</th>
+                  </tr>
+                  <tr>
+                    <th>file_name</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del archivo del producto</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Borrar los datos de un producto (Delete)</h4>
+                <a href="http://localhost:1689/metalmecanica/product/delete/[id]"
+                  >http://localhost:1689/metalmecanica/product/delete/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id_client</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar el borrado</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </details>
+  
+          <!-- Empleados -->
+          <details id="detalle4">
+            <summary>
+              <div>
+                <svg class="iconAPI" viewBox="0 0 36 36">
+                  <path
+                    d="M16.43,16.69a7,7,0,1,1,7-7A7,7,0,0,1,16.43,16.69Zm0-11.92a5,5,0,1,0,5,5A5,5,0,0,0,16.43,4.77Z"
+                  />
+                  <path
+                    d="M22,17.9A25.41,25.41,0,0,0,5.88,19.57a4.06,4.06,0,0,0-2.31,3.68V29.2a1,1,0,1,0,2,0V23.25a2,2,0,0,1,1.16-1.86,22.91,22.91,0,0,1,9.7-2.11,23.58,23.58,0,0,1,5.57.66Z"
+                  />
+                  <rect x="22.14" y="27.41" width="6.14" height="1.4" />
+                  <path
+                    d="M33.17,21.47H28v2h4.17v8.37H18V23.47h6.3v.42a1,1,0,0,0,2,0V20a1,1,0,0,0-2,0v1.47H17a1,1,0,0,0-1,1V32.84a1,1,0,0,0,1,1H33.17a1,1,0,0,0,1-1V22.47A1,1,0,0,0,33.17,21.47Z"
+                  />
+                </svg>
+                <p>Empleados</p>
+              </div>
+            </summary>
+            <div class="container">
+              <h3 id="Empleados">Empleados</h3>
+              <p>
+                Aquí se detalla el CRUD (Create, Read, Update, Delete) de
+                empleados
+              </p>
+              <br />
+              <div class="containerTable">
+                <h4>Ingresar nuevo empleado (Create)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/create"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/create</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <td>id_product</td>
+                    <td>Int</td>
+                    <td>Llave primaria, No null, Autoincremental</td>
+                  </tr>
+                  <tr>
+                    <td>name_product</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>price_unit</td>
+                    <td>Int</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>file_name</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar todos los empleados (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detailall"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detailall</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar solo un empleado (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detail/[:id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detail/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar la busqueda</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Actualizar los datos de un empleado (Update)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/update/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Llave primaria, no null, autoincremental</th>
+                  </tr>
+                  <tr>
+                    <th>name_product</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del producto</th>
+                  </tr>
+                  <tr>
+                    <th>price_unit</th>
+                    <th>Int</th>
+                    <th>Ingresa el precio por unidad</th>
+                  </tr>
+                  <tr>
+                    <th>file_name</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del archivo del producto</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Borrar los datos de un empleado (Delete)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/delete/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/delete/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id_client</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar el borrado</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </details>
+  
+          <!-- Facturas -->
+          <details id="detalle5">
+            <summary>
+              <div>
+                <svg class="iconAPI" viewBox="0 0 32 32">
+                  <g data-name="18. Bill" id="_18._Bill">
+                    <path
+                      d="M16,7h2a1,1,0,0,0,0-2H17a1,1,0,0,0-2,0v.18A3,3,0,0,0,16,11a1,1,0,0,1,0,2H14a1,1,0,0,0,0,2h1a1,1,0,0,0,2,0v-.18A3,3,0,0,0,16,9a1,1,0,0,1,0-2Z"
+                    />
+                    <path
+                      d="M31,24H28V3a3,3,0,0,0-3-3H3A3,3,0,0,0,0,3V9a1,1,0,0,0,1,1H4V29a3,3,0,0,0,3,3H29a3,3,0,0,0,3-3V25A1,1,0,0,0,31,24ZM2,3A1,1,0,0,1,4,3V8H2ZM8,25v4a1,1,0,0,1-.31.71A.93.93,0,0,1,7,30a1,1,0,0,1-1-1V3a3,3,0,0,0-.18-1H25a1,1,0,0,1,1,1V24H9A1,1,0,0,0,8,25Zm22,4a1,1,0,0,1-.31.71A.93.93,0,0,1,29,30H9.83A3,3,0,0,0,10,29V26H30Z"
+                    />
+                    <path d="M17,19H9a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2Z" />
+                    <path d="M23,19H21a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z" />
+                  </g>
+                </svg>
+                <p>Facturas</p>
+              </div>
+            </summary>
+            <div class="container">
+              <h3 id="Bill">Facturas</h3>
+              <p>
+                Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
+                servicio historial de proceos, en el cual se muestra por cuantos
+                procesos paso un producto incluyendo hora y nombre del usuario.
+              </p>
+              <br />
+              <div class="containerTable">
+                <h4>Ingresar nuevo bill (Create)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/create"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/create</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <td>id_product</td>
+                    <td>Int</td>
+                    <td>Llave primaria, No null, Autoincremental</td>
+                  </tr>
+                  <tr>
+                    <td>name_product</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>price_unit</td>
+                    <td>Int</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>file_name</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar todos los bill (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detailall"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detailall</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar solo un bill (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detail/[:id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detail/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar la busqueda</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Actualizar los datos de un bill (Update)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/update/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Llave primaria, no null, autoincremental</th>
+                  </tr>
+                  <tr>
+                    <th>name_product</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del producto</th>
+                  </tr>
+                  <tr>
+                    <th>price_unit</th>
+                    <th>Int</th>
+                    <th>Ingresa el precio por unidad</th>
+                  </tr>
+                  <tr>
+                    <th>file_name</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del archivo del producto</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Borrar los datos de un bill (Delete)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/delete/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/delete/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id_client</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar el borrado</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </details>
         </section>
-
-        <div id="contenedorLink">
-          <input
-            id="readAllClient"
-            type="text"
-            value="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detailall"
+      </section>
+  
+      <button class="btnScrollTop" id="btn_ScrollTop">
+        <svg id="arrowUp" viewBox="0 0 24 24">
+          <path
+            d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-15 5 5h-4v5h-2v-5H7l5-5z"
           />
-          <!-- <button onclick="copyClipBoard('readAllClient')">Copy text</button> -->
-        </div>
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar solo un cliente (Read)</h4>
-        <button onclick="copyClipBoard('readIDClient')">Copy text</button>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]</a
-        >
-        <input
-          type="text"
-          value="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]"
-          id="readIDClient"
-        />
-
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar la busqueda</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Actualizar los datos de un cliente (Update)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/update/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/update/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar la actualizacion</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Borrar los datos de un cliente (Delete)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/delete/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/delete/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id_client</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar el borrado</th>
-          </tr>
-        </table>
-      </div>
+        </svg>
+      </button>
     </div>
 
-    <div class="container">
-      <h3 id="Productos">Productos</h3>
-      <p>
-        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
-        de cambios en productos, tanto para la empresa como para el cliente.
-      </p>
-      <br />
-      <div class="containerTable">
-        <h4>Ingresar nuevo producto (Create)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/product/create"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/product/create</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <td>id_product</td>
-            <td>Int</td>
-            <td>Llave primaria, No null, Autoincremental</td>
-          </tr>
-          <tr>
-            <td>name_product</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>price_unit</td>
-            <td>Int</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>file_name</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar todos los productos (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/product/detailall"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/product/detailall</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar solo un producto (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/product/detail/[:id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/product/detail/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar la busqueda</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Actualizar los datos de un producto (Update)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/product/update/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/product/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Llave primaria, no null, autoincremental</th>
-          </tr>
-          <tr>
-            <th>name_product</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del producto</th>
-          </tr>
-          <tr>
-            <th>price_unit</th>
-            <th>Int</th>
-            <th>Ingresa el precio por unidad</th>
-          </tr>
-          <tr>
-            <th>file_name</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del archivo del producto</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Borrar los datos de un producto (Delete)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/product/delete/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/product/delete/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id_client</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar el borrado</th>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3 id="Procesos">Procesos</h3>
-      <p>
-        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
-        de cambios en productos, tanto para la empresa como para el cliente.
-      </p>
-      <br />
-      <div class="containerTable">
-        <h4>Ingresar un nuevo proceso (Create)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <td>id_product</td>
-            <td>Int</td>
-            <td>Llave primaria, No null, Autoincremental</td>
-          </tr>
-          <tr>
-            <td>name_product</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>price_unit</td>
-            <td>Int</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>file_name</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar todos los procesos (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar solo un proceso (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar la busqueda</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Actualizar los datos de un proceso (Update)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/update/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Llave primaria, no null, autoincremental</th>
-          </tr>
-          <tr>
-            <th>name_product</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del producto</th>
-          </tr>
-          <tr>
-            <th>price_unit</th>
-            <th>Int</th>
-            <th>Ingresa el precio por unidad</th>
-          </tr>
-          <tr>
-            <th>file_name</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del archivo del producto</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Borrar los datos de un proceso (Delete)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id_client</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar el borrado</th>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3 id="HistorialProcesos">Historial de Procesos</h3>
-      <p>
-        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
-        historial de proceos, en el cual se muestra por cuantos procesos paso un
-        producto incluyendo hora y nombre del usuario.
-      </p>
-      <br />
-      <div class="containerTable">
-        <h4>Ingresar nuevo producto (Create)</h4>
-        <a href="http://localhost:1689/metalmecanica/process/create"
-          >http://localhost:1689/metalmecanica/product/create</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <td>id_product</td>
-            <td>Int</td>
-            <td>Llave primaria, No null, Autoincremental</td>
-          </tr>
-          <tr>
-            <td>name_product</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>price_unit</td>
-            <td>Int</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>file_name</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar todos los productos (Read)</h4>
-        <a href="http://localhost:1689/metalmecanica/product/detailall"
-          >http://localhost:1689/metalmecanica/product/detailall</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar solo un cliente (Read)</h4>
-        <a href="http://localhost:1689/metalmecanica/product/detail/[:id]"
-          >http://localhost:1689/metalmecanica/product/detail/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar la busqueda</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Actualizar los datos de un producto (Update)</h4>
-        <a href="http://localhost:1689/metalmecanica/product/update/[id]"
-          >http://localhost:1689/metalmecanica/client/product/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Llave primaria, no null, autoincremental</th>
-          </tr>
-          <tr>
-            <th>name_product</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del producto</th>
-          </tr>
-          <tr>
-            <th>price_unit</th>
-            <th>Int</th>
-            <th>Ingresa el precio por unidad</th>
-          </tr>
-          <tr>
-            <th>file_name</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del archivo del producto</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Borrar los datos de un producto (Delete)</h4>
-        <a href="http://localhost:1689/metalmecanica/product/delete/[id]"
-          >http://localhost:1689/metalmecanica/product/delete/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id_client</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar el borrado</th>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3 id="Empleados">Empleados</h3>
-      <p>Aquí se detalla el CRUD (Create, Read, Update, Delete) de empleados</p>
-      <br />
-      <div class="containerTable">
-        <h4>Ingresar nuevo empleado (Create)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/create"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/create</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <td>id_product</td>
-            <td>Int</td>
-            <td>Llave primaria, No null, Autoincremental</td>
-          </tr>
-          <tr>
-            <td>name_product</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>price_unit</td>
-            <td>Int</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>file_name</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar todos los empleados (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detailall"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detailall</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar solo un empleado (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detail/[:id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/detail/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar la busqueda</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Actualizar los datos de un empleado (Update)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/update/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Llave primaria, no null, autoincremental</th>
-          </tr>
-          <tr>
-            <th>name_product</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del producto</th>
-          </tr>
-          <tr>
-            <th>price_unit</th>
-            <th>Int</th>
-            <th>Ingresa el precio por unidad</th>
-          </tr>
-          <tr>
-            <th>file_name</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del archivo del producto</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Borrar los datos de un empleado (Delete)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/delete/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/employee/delete/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id_client</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar el borrado</th>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3 id="Bill">Facturas</h3>
-      <p>
-        Aquí se detalla el CRUD (Create, Read, Update, Delete) para el servicio
-        historial de proceos, en el cual se muestra por cuantos procesos paso un
-        producto incluyendo hora y nombre del usuario.
-      </p>
-      <br />
-      <div class="containerTable">
-        <h4>Ingresar nuevo bill (Create)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/create"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/create</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <td>id_product</td>
-            <td>Int</td>
-            <td>Llave primaria, No null, Autoincremental</td>
-          </tr>
-          <tr>
-            <td>name_product</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>price_unit</td>
-            <td>Int</td>
-            <td>No null</td>
-          </tr>
-          <tr>
-            <td>file_name</td>
-            <td>Varchar(191)</td>
-            <td>No null</td>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar todos los bill (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detailall"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detailall</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-            <th>N/Necesario</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Buscar solo un bill (Read)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detail/[:id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/detail/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar la busqueda</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Actualizar los datos de un bill (Update)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/update/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>Integer</th>
-            <th>Llave primaria, no null, autoincremental</th>
-          </tr>
-          <tr>
-            <th>name_product</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del producto</th>
-          </tr>
-          <tr>
-            <th>price_unit</th>
-            <th>Int</th>
-            <th>Ingresa el precio por unidad</th>
-          </tr>
-          <tr>
-            <th>file_name</th>
-            <th>Varchar(191)</th>
-            <th>Ingresa el nombre del archivo del producto</th>
-          </tr>
-        </table>
-      </div>
-      <div class="containerTable">
-        <h4>Borrar los datos de un bill (Delete)</h4>
-        <a
-          href="https://backendportfolio-r0uf.onrender.com/metalmecanica/bill/delete/[id]"
-          >https://backendportfolio-r0uf.onrender.com/metalmecanica/delete/[:id]</a
-        >
-        <table>
-          <tr>
-            <th>Columna</th>
-            <th>Tipo de dato</th>
-            <th>Descripcion</th>
-          </tr>
-          <tr>
-            <th>id_client</th>
-            <th>Integer</th>
-            <th>Ingresa el valor numerico para realizar el borrado</th>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <button class="btnScrollTop" id="btn_ScrollTop">
-      <svg id="arrowUp" viewBox="0 0 24 24">
-        <path
-          d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-15 5 5h-4v5h-2v-5H7l5-5z"
-        />
-      </svg>
-    </button>
-
-    <script>
-         <!--Necesario para el efecto scroll top-->
-            const Btn_ScrollTop = document.getElementById("btn_ScrollTop")
-      Btn_ScrollTop.addEventListener("click", ()=>{
-        window.scrollTo({
-          top:0,
-          behavior: "smooth"
-        })
-      })
-      window.onscroll = () =>{
-          if (window.scrollY < 213){
-            Btn_ScrollTop.classList.remove("btnScrollTop-on")
-          }else{
-            Btn_ScrollTop.classList.add("btnScrollTop-on")
-          }
-        }
-    </script>
+    
+  <script src="../js/scripts.js"></script>
+ 
   </body>
 </html>
