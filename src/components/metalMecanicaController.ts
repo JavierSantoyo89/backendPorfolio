@@ -1,57 +1,17 @@
 import { Request, Response } from "express";
 import { prisma } from "../db";
-var dateActual = new Date();
-var CRUDtype:string = "";
-var TableName: string = "";
-var dataQuerys: any = null;
-var ErrorQuery: any = null
-var Id: any = null;
-
-//*------------
-function Logs(TableName: string) {
-  console.log(TableName);
-
-  async function main(TableName: string, dataQuerys: any) {
-    dataQuerys;
-    console.log("entro al main");
-    
-  console.log(TableName);
-  }
-  main(TableName, dataQuerys)
-    .then(async () => {
-      const ok = await prisma.tblstadistics.create({
-        data: {
-          status: "Ok",
-          crud: CRUDtype,
-          table: TableName,
-          project: "Metal-Mecanica",
-          datetime: dateActual,
-        },
-      });
-      console.log(ok);
-      await prisma.$disconnect();
-    })
-    .catch(async () => {
-      ErrorQuery;
-      const fail = await prisma.tblstadistics.create({
-        data: {
-          status: "Fail",
-          crud: CRUDtype,
-          table: TableName,
-          project: "Metal-Mecanica",
-          datetime: dateActual,
-        },
-      });
-      console.log(fail);
-      await prisma.$disconnect();
-    });
-} 
+import { Logs } from "../middleware";
+let CRUDtype: string = "";
+let TableName: string = "";
+let dataQuerys: any = null;
+let ErrorQuery: any = null;
+let Id: any = null;
 
 export const metalMecanicaController = {
+  // ?---------------------------------------------------------------------------------------- //
+  // *------------------- Controladores para el proyecto de metal mecanica ------------------* //
+  // ?======================================================================================== //
   index: (_req: Request, res: Response) => {
-    // ?---------------------------------------------------------------------------------------- //
-    // *------------------- Controladores para el proyecto de metal mecanica ------------------* //
-    // ?======================================================================================== //
     res.render("indexMetalMecanica");
   },
 
@@ -59,21 +19,25 @@ export const metalMecanicaController = {
   //*  -------------------------------- CRUD section Client ------------------------------- *//
   // ?---------------------------------------------------------------------------------------- //
 
-  // *----------------- Controlador para crear un nuevo registro employee ------------------* //
+  // *----------------- Controlador para crear un nuevo registro de cliente ------------------* //
   createClient: async (req: Request, res: Response) => {
-    CRUDtype = "Update record ";
-    TableName = "tblclient"; 
-    Logs(TableName);  
-  dataQuerys = res.json({
-    data: await prisma.tblclient.create({
-          data: req.body,}),create:"OK",}).status(200);
-  
+    CRUDtype = "Create record ";
+    TableName = "tblclient";
+    Logs(TableName);
+    dataQuerys = res
+      .json({
+        data: await prisma.tblclient.create({
+          data: req.body,
+        }),
+        create: "OK",
+      })
+      .status(200);
   },
 
   // *----------------- Controlador para leer todos los registros de client --------------* //
   readAllClient: async (_req: Request, res: Response) => {
-    TableName = "tblclient";
     CRUDtype = "Read all records";
+    TableName = "tblclient";
     dataQuerys = res
       .json({
         data: await prisma.tblclient.findMany(),
@@ -88,15 +52,24 @@ export const metalMecanicaController = {
   readOneClient: async (req: Request, res: Response) => {
     CRUDtype = "Read only one record";
     TableName = "tblclient";
-   let Id = req.params.id;
+    let Id = req.params.id;
 
     var valoresAceptados = /^[0-9]+$/;
-        if (Id.match(valoresAceptados)){
-          dataQuerys = res.json({data: await prisma.tblclient.findFirst({where: { id_client: Number(Id) },}),findOne: "Ok"}).status(200);
-          Logs(TableName);
-        } else {
-          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
-       } 
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
+          data: await prisma.tblclient.findFirst({
+            where: { id_client: Number(Id) },
+          }),
+          findOne: "Ok",
+        })
+        .status(200);
+      Logs(TableName);
+    } else {
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
+    }
   },
 
   // *------------------------- Controlador para leer un registro ------------------------* //
@@ -107,7 +80,8 @@ export const metalMecanicaController = {
     var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
     if (Id.match(valoresAceptados)) {
       let Id = +req.params.id;
-      dataQuerys = res.json({
+      dataQuerys = res
+        .json({
           data: await prisma.tblclient.delete({
             where: { id_client: Number(Id) },
           }),
@@ -117,7 +91,9 @@ export const metalMecanicaController = {
       Logs(TableName);
     } else {
       // Si el valor no es numerico
-      ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404);
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -127,21 +103,23 @@ export const metalMecanicaController = {
     TableName = "tblclient";
     Id = req.params.id;
 
-        var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
-        if (Id.match(valoresAceptados)) {
-         
-        dataQuerys = res.json({
+    var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
           data: await prisma.tblclient.update({
             where: { id_client: Number(Id) },
             data: req.body,
           }),
-          findOne: "Ok", 
+          findOne: "Ok",
         })
         .status(200);
-        Logs(TableName); 
-      } else {
-        // Si el valor no es numerico
-        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
+      Logs(TableName);
+    } else {
+      // Si el valor no es numerico
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -151,10 +129,15 @@ export const metalMecanicaController = {
 
   // *----------------- Controlador para crear un nuevo registro employee ------------------* //
   createEmployee: async (req: Request, res: Response) => {
-    dataQuerys = res.json({
-      data: await prisma.tblemployee.create({
-        data: req.body,}),create:"OK",}).status(200);
-        Logs(TableName);  
+    dataQuerys = res
+      .json({
+        data: await prisma.tblemployee.create({
+          data: req.body,
+        }),
+        create: "OK",
+      })
+      .status(200);
+    Logs(TableName);
   },
 
   // *----------------- Controlador para leer todos los registros de employee --------------* //
@@ -177,12 +160,21 @@ export const metalMecanicaController = {
     CRUDtype = "Read only one record";
     let Id = req.params.id;
     var valoresAceptados = /^[0-9]+$/;
-        if (Id.match(valoresAceptados)){
-          dataQuerys = res.json({data: await prisma.tblemployee.findFirst({where: { id_employee: Number(Id) },}),findOne: "Ok"}).status(200);
-          Logs(TableName);
-        } else {
-          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
-       } 
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
+          data: await prisma.tblemployee.findFirst({
+            where: { id_employee: Number(Id) },
+          }),
+          findOne: "Ok",
+        })
+        .status(200);
+      Logs(TableName);
+    } else {
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
+    }
   },
 
   // *------------------------- Controlador para borrar un registro ------------------------* //
@@ -193,7 +185,8 @@ export const metalMecanicaController = {
     var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
     if (Id.match(valoresAceptados)) {
       let Id = +req.params.id;
-      dataQuerys = res.json({
+      dataQuerys = res
+        .json({
           data: await prisma.tblemployee.delete({
             where: { id_employee: Number(Id) },
           }),
@@ -203,7 +196,9 @@ export const metalMecanicaController = {
       Logs(TableName);
     } else {
       // Si el valor no es numerico
-      ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404);
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -213,21 +208,23 @@ export const metalMecanicaController = {
     TableName = "tblemployee";
     Id = req.params.id;
 
-        var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
-        if (Id.match(valoresAceptados)) {
-         
-        dataQuerys = res.json({
+    var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
           data: await prisma.tblemployee.update({
             where: { id_employee: Number(Id) },
             data: req.body,
           }),
-          Update: "Ok", 
+          Update: "Ok",
         })
         .status(200);
-        Logs(TableName); 
-      } else {
-        // Si el valor no es numerico
-        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
+      Logs(TableName);
+    } else {
+      // Si el valor no es numerico
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -237,10 +234,15 @@ export const metalMecanicaController = {
 
   // *----------------- Controlador para crear un nuevo registro process ------------------* //
   createProcess: async (req: Request, res: Response) => {
-    dataQuerys = res.json({
-      data: await prisma.tblprocess.create({
-        data: req.body,}),create:"OK",}).status(200);
-        Logs(TableName);  
+    dataQuerys = res
+      .json({
+        data: await prisma.tblprocess.create({
+          data: req.body,
+        }),
+        create: "OK",
+      })
+      .status(200);
+    Logs(TableName);
   },
 
   // *----------------- Controlador para leer todos los registros de process --------------* //
@@ -264,12 +266,21 @@ export const metalMecanicaController = {
     CRUDtype = "Read only one record";
     let Id = req.params.id;
     var valoresAceptados = /^[0-9]+$/;
-        if (Id.match(valoresAceptados) && Number(Id)>0){
-          dataQuerys = res.json({data: await prisma.tblprocess.findFirst({where: { id_process: Number(Id) },}),findOne: "Ok"}).status(200);
-          Logs(TableName);
-        } else {
-          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(400)
-       } 
+    if (Id.match(valoresAceptados) && Number(Id) > 0) {
+      dataQuerys = res
+        .json({
+          data: await prisma.tblprocess.findFirst({
+            where: { id_process: Number(Id) },
+          }),
+          findOne: "Ok",
+        })
+        .status(200);
+      Logs(TableName);
+    } else {
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(400);
+    }
   },
   //* =====================================================================================* //
 
@@ -281,7 +292,8 @@ export const metalMecanicaController = {
     var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
     if (Id.match(valoresAceptados)) {
       let Id = +req.params.id;
-      dataQuerys = res.json({
+      dataQuerys = res
+        .json({
           data: await prisma.tblprocess.delete({
             where: { id_process: Number(Id) },
           }),
@@ -291,7 +303,9 @@ export const metalMecanicaController = {
       Logs(TableName);
     } else {
       // Si el valor no es numerico
-      ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404);
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -300,20 +314,23 @@ export const metalMecanicaController = {
     CRUDtype = "Update record ";
     TableName = "tblprocess";
     Id = req.params.id;
-        var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
-        if (Id.match(valoresAceptados)) {
-        dataQuerys = res.json({
+    var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
           data: await prisma.tblprocess.update({
             where: { id_process: Number(Id) },
             data: req.body,
           }),
-          Update: "Ok", 
+          Update: "Ok",
         })
         .status(200);
-        Logs(TableName); 
-      } else {
-        // Si el valor no es numerico
-        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
+      Logs(TableName);
+    } else {
+      // Si el valor no es numerico
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -323,10 +340,15 @@ export const metalMecanicaController = {
 
   // *----------------- Controlador para crear un nuevo registro employee ------------------* //
   createProduct: async (req: Request, res: Response) => {
-    dataQuerys = res.json({
-      data: await prisma.tblproduct.create({
-        data: req.body,}),create:"OK",}).status(200);
-        Logs(TableName);  
+    dataQuerys = res
+      .json({
+        data: await prisma.tblproduct.create({
+          data: req.body,
+        }),
+        create: "OK",
+      })
+      .status(200);
+    Logs(TableName);
   },
 
   // *----------------- Controlador para leer todos los registros de product --------------* //
@@ -349,12 +371,21 @@ export const metalMecanicaController = {
     CRUDtype = "Read only one record";
     let Id = req.params.id;
     var valoresAceptados = /^[0-9]+$/;
-        if (Id.match(valoresAceptados)){
-          dataQuerys = res.json({data: await prisma.tblproduct.findFirst({where: { id_product: Number(Id) },}),findOne: "Ok"}).status(200);
-          Logs(TableName);
-        } else {
-          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
-       } 
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
+          data: await prisma.tblproduct.findFirst({
+            where: { id_product: Number(Id) },
+          }),
+          findOne: "Ok",
+        })
+        .status(200);
+      Logs(TableName);
+    } else {
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
+    }
   },
 
   // *------------------------- Controlador para leer un registro ------------------------* //
@@ -365,7 +396,8 @@ export const metalMecanicaController = {
     var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
     if (Id.match(valoresAceptados)) {
       let Id = +req.params.id;
-      dataQuerys = res.json({
+      dataQuerys = res
+        .json({
           data: await prisma.tblproduct.delete({
             where: { id_product: Number(Id) },
           }),
@@ -375,7 +407,9 @@ export const metalMecanicaController = {
       Logs(TableName);
     } else {
       // Si el valor no es numerico
-      ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404);
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -384,20 +418,23 @@ export const metalMecanicaController = {
     CRUDtype = "Update record ";
     TableName = "tblproduct";
     Id = req.params.id;
-        var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
-        if (Id.match(valoresAceptados)) {
-        dataQuerys = res.json({
+    var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
           data: await prisma.tblproduct.update({
             where: { id_product: Number(Id) },
             data: req.body,
           }),
-          Update: "Ok", 
+          Update: "Ok",
         })
         .status(200);
-        Logs(TableName); 
-      } else {
-        // Si el valor no es numerico
-        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
+      Logs(TableName);
+    } else {
+      // Si el valor no es numerico
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -407,10 +444,15 @@ export const metalMecanicaController = {
 
   // *----------------- Controlador para crear un nuevo registro bill ------------------* //
   createFacture: async (req: Request, res: Response) => {
-    dataQuerys = res.json({
-      data: await prisma.tblbill.create({
-        data: req.body,}),create:"OK",}).status(200);
-        Logs(TableName);
+    dataQuerys = res
+      .json({
+        data: await prisma.tblbill.create({
+          data: req.body,
+        }),
+        create: "OK",
+      })
+      .status(200);
+    Logs(TableName);
   },
 
   // *----------------- Controlador para leer todos los registros de bill --------------* //
@@ -433,12 +475,21 @@ export const metalMecanicaController = {
     CRUDtype = "Read only one record";
     let Id = req.params.id;
     var valoresAceptados = /^[0-9]+$/;
-        if (Id.match(valoresAceptados)){
-          dataQuerys = res.json({data: await prisma.tblbill.findFirst({where: { id_bill: Number(Id) },}),findOne: "Ok"}).status(200);
-          Logs(TableName);
-        } else {
-          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
-       } 
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
+          data: await prisma.tblbill.findFirst({
+            where: { id_bill: Number(Id) },
+          }),
+          findOne: "Ok",
+        })
+        .status(200);
+      Logs(TableName);
+    } else {
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
+    }
   },
 
   // *------------------------- Controlador para leer un registro de bill ------------------------* //
@@ -449,7 +500,8 @@ export const metalMecanicaController = {
     var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
     if (Id.match(valoresAceptados)) {
       let Id = +req.params.id;
-      dataQuerys = res.json({
+      dataQuerys = res
+        .json({
           data: await prisma.tblbill.delete({
             where: { id_bill: Number(Id) },
           }),
@@ -459,7 +511,9 @@ export const metalMecanicaController = {
       Logs(TableName);
     } else {
       // Si el valor no es numerico
-      ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404);
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -468,34 +522,41 @@ export const metalMecanicaController = {
     CRUDtype = "Update record ";
     TableName = "tblbill";
     Id = req.params.id;
-        var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
-        if (Id.match(valoresAceptados && Id>0)) {
-        dataQuerys = res.json({
+    var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+    if (Id.match(valoresAceptados && Id > 0)) {
+      dataQuerys = res
+        .json({
           data: await prisma.tblbill.update({
             where: { id_bill: Number(Id) },
             data: req.body,
           }),
-          Update: "Ok", 
+          Update: "Ok",
         })
         .status(200);
-        Logs(TableName); 
-      } else {
-        // Si el valor no es numerico
-        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(400)
+      Logs(TableName);
+    } else {
+      // Si el valor no es numerico
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(400);
     }
   },
 
-  
   // ?---------------------------------------------------------------------------------------- //
   //*  -------------------------------- CRUD section History process ------------------------------- *//
   // ?---------------------------------------------------------------------------------------- //
 
   // *----------------- Controlador para crear un nuevo registro bill ------------------* //
   createHistory: async (req: Request, res: Response) => {
-    dataQuerys = res.json({
-      data: await prisma.tblhistoryprocess.create({
-        data: req.body,}),create:"OK",}).status(200);
-        Logs(TableName);
+    dataQuerys = res
+      .json({
+        data: await prisma.tblhistoryprocess.create({
+          data: req.body,
+        }),
+        create: "OK",
+      })
+      .status(200);
+    Logs(TableName);
   },
 
   // *----------------- Controlador para leer todos los registros de bill --------------* //
@@ -518,12 +579,21 @@ export const metalMecanicaController = {
     CRUDtype = "Read only one record";
     let Id = req.params.id;
     var valoresAceptados = /^[0-9]+$/;
-        if (Id.match(valoresAceptados)){
-          dataQuerys = res.json({data: await prisma.tblhistoryprocess.findFirst({where: { id_history_process: Number(Id) },}),findOne: "Ok"}).status(200);
-          Logs(TableName);
-        } else {
-          ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404)
-       } 
+    if (Id.match(valoresAceptados)) {
+      dataQuerys = res
+        .json({
+          data: await prisma.tblhistoryprocess.findFirst({
+            where: { id_history_process: Number(Id) },
+          }),
+          findOne: "Ok",
+        })
+        .status(200);
+      Logs(TableName);
+    } else {
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
+    }
   },
 
   // *------------------------- Controlador para leer un registro de bill ------------------------* //
@@ -534,7 +604,8 @@ export const metalMecanicaController = {
     var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
     if (Id.match(valoresAceptados)) {
       let Id = +req.params.id;
-      dataQuerys = res.json({
+      dataQuerys = res
+        .json({
           data: await prisma.tblhistoryprocess.delete({
             where: { id_history_process: Number(Id) },
           }),
@@ -544,7 +615,9 @@ export const metalMecanicaController = {
       Logs(TableName);
     } else {
       // Si el valor no es numerico
-      ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(404);
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(404);
     }
   },
 
@@ -553,21 +626,23 @@ export const metalMecanicaController = {
     CRUDtype = "Update record ";
     TableName = "tblhistoryprocess";
     Id = req.params.id;
-        var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
-        if (Id.match(valoresAceptados && Id>0)) {
-        dataQuerys = res.json({
+    var valoresAceptados = /^[0-9]+$/; // Si el valor en numerico
+    if (Id.match(valoresAceptados && Id > 0)) {
+      dataQuerys = res
+        .json({
           data: await prisma.tblhistoryprocess.update({
             where: { id_history_process: Number(Id) },
             data: req.body,
           }),
-          Update: "Ok", 
+          Update: "Ok",
         })
         .status(200);
-        Logs(TableName); 
-      } else {
-        // Si el valor no es numerico
-        ErrorQuery = res.json("Revisa si ingresaste los datos correctos").status(400)
+      Logs(TableName);
+    } else {
+      // Si el valor no es numerico
+      ErrorQuery = res
+        .json("Revisa si ingresaste los datos correctos")
+        .status(400);
     }
-
-},
-}
+  },
+};
