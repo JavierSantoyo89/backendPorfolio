@@ -23,7 +23,7 @@ export const metalMecanicaController = {
   createClient: async (req: Request, res: Response) => {
     CRUDtype = "Create record ";
     TableName = "tblclient";
-    Logs(TableName);
+    Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     dataQuerys = res
       .json({
         data: await prisma.tblclient.create({
@@ -45,10 +45,10 @@ export const metalMecanicaController = {
         SearchAll: "Ok",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
-  // *------------------------- Controlador para leer un registro -------------------------* //
+  // *------------------------- Controlador para leer un registro de cliente -------------------------* //
   readOneClient: async (req: Request, res: Response) => {
     CRUDtype = "Read only one record";
     TableName = "tblclient";
@@ -64,7 +64,7 @@ export const metalMecanicaController = {
           findOne: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       ErrorQuery = res
         .json("Revisa si ingresaste los datos correctos")
@@ -72,7 +72,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *------------------------- Controlador para leer un registro ------------------------* //
+  // *------------------------- Controlador para borrar un registro de cliente ------------------------* //
   deleteOneClient: async (req: Request, res: Response) => {
     CRUDtype = "Deleted record ";
     TableName = "tblclient";
@@ -88,7 +88,7 @@ export const metalMecanicaController = {
           delete: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -97,7 +97,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *---------------------- Controlador para actualizar un registro ----------------------* //
+  // *---------------------- Controlador para actualizar un registro de cliente ----------------------* //
   updateClient: async (req: Request, res: Response) => {
     CRUDtype = "Update record ";
     TableName = "tblclient";
@@ -114,7 +114,7 @@ export const metalMecanicaController = {
           findOne: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -137,7 +137,7 @@ export const metalMecanicaController = {
         create: "OK",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
   // *----------------- Controlador para leer todos los registros de employee --------------* //
@@ -151,10 +151,10 @@ export const metalMecanicaController = {
         SearchAll: "Ok",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
-  // *------------------------- Controlador para leer un registro -------------------------* //
+  // *------------------------- Controlador para leer un registro de employee -------------------------* //
   readOneEmployee: async (req: Request, res: Response) => {
     TableName = "tblemployee";
     CRUDtype = "Read only one record";
@@ -169,7 +169,7 @@ export const metalMecanicaController = {
           findOne: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       ErrorQuery = res
         .json("Revisa si ingresaste los datos correctos")
@@ -177,7 +177,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *------------------------- Controlador para borrar un registro ------------------------* //
+  // *------------------------- Controlador para borrar un registro de employee ------------------------* //
   deleteOneEmployee: async (req: Request, res: Response) => {
     TableName = "tblemployee";
     CRUDtype = "Delete one record";
@@ -193,7 +193,7 @@ export const metalMecanicaController = {
           delete: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -202,7 +202,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *---------------------- Controlador para actualizar un registro ----------------------* //
+  // *---------------------- Controlador para actualizar un registro de employee ----------------------* //
   updateEmployee: async (req: Request, res: Response) => {
     CRUDtype = "Update record ";
     TableName = "tblemployee";
@@ -219,7 +219,7 @@ export const metalMecanicaController = {
           Update: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -242,7 +242,7 @@ export const metalMecanicaController = {
         create: "OK",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
   // *----------------- Controlador para leer todos los registros de process --------------* //
@@ -256,9 +256,8 @@ export const metalMecanicaController = {
         SearchAll: "Ok",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
-  //* =====================================================================================* //
 
   // *------------------------- Controlador para leer un registro de process --------------* //
   readOneProcess: async (req: Request, res: Response) => {
@@ -275,14 +274,13 @@ export const metalMecanicaController = {
           findOne: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       ErrorQuery = res
         .json("Revisa si ingresaste los datos correctos")
         .status(400);
     }
   },
-  //* =====================================================================================* //
 
   // *----------------------- Controlador para borrar un registro de process --------------* //
   deleteOneProcess: async (req: Request, res: Response) => {
@@ -300,7 +298,7 @@ export const metalMecanicaController = {
           delete: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -325,7 +323,7 @@ export const metalMecanicaController = {
           Update: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -338,7 +336,7 @@ export const metalMecanicaController = {
   //*  -------------------------------- CRUD section Product ------------------------------- *//
   // ?---------------------------------------------------------------------------------------- //
 
-  // *----------------- Controlador para crear un nuevo registro employee ------------------* //
+  // *----------------- Controlador para crear un nuevo registro Product ------------------* //
   createProduct: async (req: Request, res: Response) => {
     dataQuerys = res
       .json({
@@ -348,7 +346,7 @@ export const metalMecanicaController = {
         create: "OK",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
   // *----------------- Controlador para leer todos los registros de product --------------* //
@@ -362,10 +360,10 @@ export const metalMecanicaController = {
         SearchAll: "Ok",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
-  // *------------------------- Controlador para leer un registro -------------------------* //
+  // *------------------------- Controlador para leer un registro de product -------------------------* //
   readOneProduct: async (req: Request, res: Response) => {
     TableName = "tblproduct";
     CRUDtype = "Read only one record";
@@ -380,7 +378,7 @@ export const metalMecanicaController = {
           findOne: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       ErrorQuery = res
         .json("Revisa si ingresaste los datos correctos")
@@ -388,7 +386,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *------------------------- Controlador para leer un registro ------------------------* //
+  // *------------------------- Controlador para borrar un registro de product ------------------------* //
   deleteOneProduct: async (req: Request, res: Response) => {
     TableName = "tblproduct";
     CRUDtype = "Delete one record";
@@ -404,7 +402,7 @@ export const metalMecanicaController = {
           delete: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -413,7 +411,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *---------------------- Controlador para actualizar un registro ----------------------* //
+  // *---------------------- Controlador para actualizar un registro de product ----------------------* //
   updateProduct: async (req: Request, res: Response) => {
     CRUDtype = "Update record ";
     TableName = "tblproduct";
@@ -429,7 +427,7 @@ export const metalMecanicaController = {
           Update: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -452,7 +450,7 @@ export const metalMecanicaController = {
         create: "OK",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
   // *----------------- Controlador para leer todos los registros de bill --------------* //
@@ -466,7 +464,7 @@ export const metalMecanicaController = {
         SearchAll: "Ok",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
   // *------------------------- Controlador para leer un registro de bill-------------------------* //
@@ -484,7 +482,7 @@ export const metalMecanicaController = {
           findOne: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       ErrorQuery = res
         .json("Revisa si ingresaste los datos correctos")
@@ -508,7 +506,7 @@ export const metalMecanicaController = {
           delete: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -533,7 +531,7 @@ export const metalMecanicaController = {
           Update: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -546,7 +544,7 @@ export const metalMecanicaController = {
   //*  -------------------------------- CRUD section History process ------------------------------- *//
   // ?---------------------------------------------------------------------------------------- //
 
-  // *----------------- Controlador para crear un nuevo registro bill ------------------* //
+  // *----------------- Controlador para crear un nuevo registro Historial de procesos ------------------* //
   createHistory: async (req: Request, res: Response) => {
     dataQuerys = res
       .json({
@@ -556,10 +554,10 @@ export const metalMecanicaController = {
         create: "OK",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
-  // *----------------- Controlador para leer todos los registros de bill --------------* //
+  // *----------------- Controlador para leer todos los registros de historial de procesos --------------* //
   readAllHistory: async (_req: Request, res: Response) => {
     TableName = "tbltblhistoryprocess";
     CRUDtype = "Read all records";
@@ -570,10 +568,10 @@ export const metalMecanicaController = {
         SearchAll: "Ok",
       })
       .status(200);
-    Logs(TableName);
+      Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
   },
 
-  // *------------------------- Controlador para leer un registro de bill-------------------------* //
+  // *------------------------- Controlador para leer un registro de historial de procesos-------------------------* //
   readOneHistory: async (req: Request, res: Response) => {
     TableName = "tblhistoryprocess";
     CRUDtype = "Read only one record";
@@ -588,7 +586,7 @@ export const metalMecanicaController = {
           findOne: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       ErrorQuery = res
         .json("Revisa si ingresaste los datos correctos")
@@ -596,7 +594,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *------------------------- Controlador para leer un registro de bill ------------------------* //
+  // *------------------------- Controlador para leer un registro de historial de procesos ------------------------* //
   deleteOnehistory: async (req: Request, res: Response) => {
     TableName = "tblhistoryprocess";
     CRUDtype = "Delete one record";
@@ -612,7 +610,7 @@ export const metalMecanicaController = {
           delete: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
@@ -621,7 +619,7 @@ export const metalMecanicaController = {
     }
   },
 
-  // *---------------------- Controlador para actualizar un registro de bill ----------------------* //
+  // *---------------------- Controlador para actualizar un registro de historial de procesos ----------------------* //
   updateHistory: async (req: Request, res: Response) => {
     CRUDtype = "Update record ";
     TableName = "tblhistoryprocess";
@@ -637,7 +635,7 @@ export const metalMecanicaController = {
           Update: "Ok",
         })
         .status(200);
-      Logs(TableName);
+        Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     } else {
       // Si el valor no es numerico
       ErrorQuery = res
