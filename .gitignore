@@ -7,6 +7,10 @@
 /build
 build
 
+# env
+/.env
+.env
+env
 
 # dependencies
 node_modules
