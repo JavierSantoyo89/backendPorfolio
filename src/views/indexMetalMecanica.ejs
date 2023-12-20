@@ -12,10 +12,10 @@
       <section>
         <h1>Metal Mecanica backend</h1>
         <p>
-          Este Proyecto está enfocado a empresa metal mecánica que requieren tener
-          un control sobre su producción mostrando que producto están trabajando y
-          en que parte del proceso está el mismo. Tanto por los administrativos de
-          la empresa como los clientes.
+          Este Proyecto está enfocado a empresa metal mecánica que requieren
+          tener un control sobre su producción mostrando que producto están
+          trabajando y en que parte del proceso está el mismo. Tanto por los
+          administrativos de la empresa como los clientes.
         </p>
         <br />
         <h2>API's</h2>
@@ -26,9 +26,10 @@
           administrativos de la empresa como los clientes.
         </p>
       </section>
+      <h2>Selecciona uno de los servicios disponibles</h2>
       <section class="Services">
-        <h2>Selecciona uno de los servicios disponibles</h2>
         <section id="servicePanel">
+         
           <!-- Clientes -->
           <details id="detalle1">
             <summary>
@@ -44,23 +45,28 @@
                 <p>Clientes</p>
               </div>
             </summary>
-  
-            <div class="container">
+
+            <div class="containerAPI">
               <h3 id="Clientes">Clientes</h3>
               <p>
                 Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
-                servicio de clientes, tanto para la empresa como para el cliente.
+                servicio de clientes, tanto para la empresa como para el
+                cliente.
               </p>
               <br />
               <div class="containerTable">
-                <h4>Ingresar nuevo cliente (Create)</h4>
-                <button onclick="copyClipBoard('create client', 'metalmecanica', 'client/create')">
-                  <img
-                    id="copyImg"
-                    src="images/copy-alt-svgrepo-com.svg"
-                    alt="copy"
-                  />
-                </button>
+                <div id="titleAPI">
+                  <h4>Ingresar nuevo cliente (Create)</h4>
+                  <button
+                    onclick="copyClipBoard('create client', 'metalmecanica', 'client/create')"
+                  >
+                    <img
+                      id="copyImg"
+                      src="images/copy-alt-svgrepo-com.svg"
+                      alt="copy"
+                    />
+                  </button>
+                </div>
                 <a
                   href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/create"
                   >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/create</a
@@ -114,17 +120,23 @@
                 </table>
               </div>
               <div class="containerTable">
-                <section>
+                <div id="titleAPI">
                   <h4>Buscar todos los clientes (Read)</h4>
-                  <button onclick="copyClipBoard('readAllClient', 'metalmecanica', 'client/detailall')">
+                  <button
+                    onclick="copyClipBoard('readAllClient', 'metalmecanica', 'client/detailall')"
+                  >
                     <img
                       id="copyImg"
                       src="images/copy-alt-svgrepo-com.svg"
                       alt="copy"
                     />
                   </button>
-                  <a href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detailall">https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detailall</a>
-                </section>
+                </div>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detailall"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detailall</a
+                >
+
                 <table>
                   <tr>
                     <th>Columna</th>
@@ -139,19 +151,23 @@
                 </table>
               </div>
               <div class="containerTable">
+                <div id="titleAPI">
                 <h4>Buscar solo un cliente (Read)</h4>
-                <button onclick="copyClipBoard('read one client', 'metalmecanica', 'client/detail/')">
+                <button
+                  onclick="copyClipBoard('read one client', 'metalmecanica', 'client/detail/')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
                     alt="copy"
                   />
                 </button>
+                </div>
                 <a
                   href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]"
                   >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/detail/[:id]</a
                 >
-                
+
                 <table>
                   <tr>
                     <th>Columna</th>
@@ -166,14 +182,18 @@
                 </table>
               </div>
               <div class="containerTable">
+                <div id="titleAPI">
                 <h4>Actualizar los datos de un cliente (Update)</h4>
-                <button onclick="copyClipBoard('update one client', 'metalmecanica', 'client/update/')">
+                <button
+                  onclick="copyClipBoard('update one client', 'metalmecanica', 'client/update/')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
                     alt="copy"
                   />
                 </button>
+                </div>
                 <a
                   href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/update/[id]"
                   >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/update/[:id]</a
@@ -194,14 +214,18 @@
                 </table>
               </div>
               <div class="containerTable">
+                <div id="titleAPI">
                 <h4>Borrar los datos de un cliente (Delete)</h4>
-                <button onclick="copyClipBoard('delete one client', 'metalmecanica', 'client/delete/')">
+                <button
+                  onclick="copyClipBoard('delete one client', 'metalmecanica', 'client/delete/')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
                     alt="copy"
                   />
                 </button>
+                </div>
                 <a
                   href="https://backendportfolio-r0uf.onrender.com/metalmecanica/client/delete/[id]"
                   >https://backendportfolio-r0uf.onrender.com/metalmecanica/client/delete/[:id]</a
@@ -221,9 +245,9 @@
               </div>
             </div>
           </details>
-  
+
           <!-- Procesos -->
-          <details id="detalle2">
+          <!-- <details id="detalle2">
             <summary>
               <div>
                 <svg class="iconAPI" viewBox="0 0 18.566 18.566">
@@ -242,24 +266,27 @@
                 </svg>
               </div>
             </summary>
-  
-            <div class="container">
+
+            <div class="containerAPI">
               <h3 id="Procesos">Procesos</h3>
               <p>
                 Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
-                servicio de cambios en productos, tanto para la empresa como para
-                el cliente.
+                servicio de cambios en productos, tanto para la empresa como
+                para el cliente.
               </p>
               <br />
               <div class="containerTable">
                 <h4>Ingresar un nuevo proceso (Create)</h4>
-                <button onclick="copyClipBoard('create new process', 'metalmecanica', 'process/create')">
+                <button
+                  onclick="copyClipBoard('create new process', 'metalmecanica', 'process/create')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
                     alt="copy"
                   />
                 </button>
+              </div>
                 <a
                   href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create"
                   >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create</a
@@ -294,13 +321,16 @@
               </div>
               <div class="containerTable">
                 <h4>Buscar todos los procesos (Read)</h4>
-                <button onclick="copyClipBoard('show all process', 'metalmecanica', 'process/detailall')">
+                <button
+                  onclick="copyClipBoard('show all process', 'metalmecanica', 'process/detailall')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
                     alt="copy"
                   />
                 </button>
+                </div>
                 <a
                   href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall"
                   >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall</a
@@ -320,7 +350,9 @@
               </div>
               <div class="containerTable">
                 <h4>Buscar solo un proceso (Read)</h4>
-                <button onclick="copyClipBoard('show one process', 'metalmecanica', 'process/detail/[id]')">
+                <button
+                  onclick="copyClipBoard('show one process', 'metalmecanica', 'process/detail/[id]')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
@@ -346,7 +378,9 @@
               </div>
               <div class="containerTable">
                 <h4>Actualizar los datos de un proceso (Update)</h4>
-                <button onclick="copyClipBoard('update one process', 'metalmecanica', 'process/update/')">
+                <button
+                  onclick="copyClipBoard('update one process', 'metalmecanica', 'process/update/')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
@@ -387,7 +421,9 @@
               </div>
               <div class="containerTable">
                 <h4>Borrar los datos de un proceso (Delete)</h4>
-                <button onclick="copyClipBoard('delete one process', 'metalmecanica', 'process/delete/')">
+                <button
+                  onclick="copyClipBoard('delete one process', 'metalmecanica', 'process/delete/')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
@@ -412,175 +448,9 @@
                 </table>
               </div>
             </div>
-          </details>
-  
-          <!-- Productos -->
-          <details id="detalle3">
-            <summary>
-              <div>
-                <svg class="iconAPI" viewBox="0 0 256 253">
-                  <path
-                    d="M122,219H76v-45h18v14h10v-14h18V219z M182,219h-46v-45h18v14h10v-14h18V219z M152,160h-46v-45h18v14h10v-14h18V160z M2,69
-    c0,13.678,9.625,25.302,22,29.576V233H2v18h252v-18h-22V98.554c12.89-3.945,21.699-15.396,22-29.554v-8H2V69z M65.29,68.346
-    c0,6.477,6.755,31.47,31.727,31.47c21.689,0,31.202-19.615,31.202-31.47c0,11.052,7.41,31.447,31.464,31.447
-    c21.733,0,31.363-20.999,31.363-31.447c0,14.425,9.726,26.416,22.954,30.154V233H42V98.594C55.402,94.966,65.29,82.895,65.29,68.346
-    z M222.832,22H223V2H34v20L2,54h252L222.832,22z"
-                  />
-                </svg>
-                <p>Productos</p>
-              </div>
-            </summary>
-            <div class="container">
-              <h3 id="Productos`">Productos</h3>
-              <p>
-                Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
-                servicio de cambios en productos, tanto para la empresa como para
-                el cliente.
-              </p>
-              <br />
-              <div class="containerTable">
-                <h4>Ingresar un nuevo producto` (Create)</h4>
-                <button onclick="copyClipBoard('create new producto', 'metalmecanica', 'process/create')">
-                  <img
-                    id="copyImg"
-                    src="images/copy-alt-svgrepo-com.svg"
-                    alt="copy"
-                  />
-                </button>
-                <a
-                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create"
-                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create</a
-                >
-                <table>
-                  <tr>
-                    <th>Columna</th>
-                    <th>Tipo de dato</th>
-                    <th>Descripcion</th>
-                  </tr>
-                  <tr>
-                    <td>id_product</td>
-                    <td>Int</td>
-                    <td>Llave primaria, No null, Autoincremental</td>
-                  </tr>
-                  <tr>
-                    <td>name_product</td>
-                    <td>Varchar(191)</td>
-                    <td>No null</td>
-                  </tr>
-                  <tr>
-                    <td>price_unit</td>
-                    <td>Int</td>
-                    <td>No null</td>
-                  </tr>
-                  <tr>
-                    <td>file_name</td>
-                    <td>Varchar(191)</td>
-                    <td>No null</td>
-                  </tr>
-                </table>
-              </div>
-              <div class="containerTable">
-                <h4>Buscar todos los procesos (Read)</h4>
-                <a
-                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall"
-                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall</a
-                >
-                <table>
-                  <tr>
-                    <th>Columna</th>
-                    <th>Tipo de dato</th>
-                    <th>Descripcion</th>
-                  </tr>
-                  <tr>
-                    <th>N/Necesario</th>
-                    <th>N/Necesario</th>
-                    <th>N/Necesario</th>
-                  </tr>
-                </table>
-              </div>
-              <div class="containerTable">
-                <h4>Buscar solo un proceso (Read)</h4>
-                <a
-                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]"
-                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]</a
-                >
-                <table>
-                  <tr>
-                    <th>Columna</th>
-                    <th>Tipo de dato</th>
-                    <th>Descripcion</th>
-                  </tr>
-                  <tr>
-                    <th>id</th>
-                    <th>Integer</th>
-                    <th>Ingresa el valor numerico para realizar la busqueda</th>
-                  </tr>
-                </table>
-              </div>
-              <div class="containerTable">
-                <h4>Actualizar los datos de un proceso (Update)</h4>
-                <a
-                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/update/[id]"
-                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/[:id]</a
-                >
-                <table>
-                  <tr>
-                    <th>Columna</th>
-                    <th>Tipo de dato</th>
-                    <th>Descripcion</th>
-                  </tr>
-                  <tr>
-                    <th>id</th>
-                    <th>Integer</th>
-                    <th>Llave primaria, no null, autoincremental</th>
-                  </tr>
-                  <tr>
-                    <th>name_product</th>
-                    <th>Varchar(191)</th>
-                    <th>Ingresa el nombre del producto</th>
-                  </tr>
-                  <tr>
-                    <th>price_unit</th>
-                    <th>Int</th>
-                    <th>Ingresa el precio por unidad</th>
-                  </tr>
-                  <tr>
-                    <th>file_name</th>
-                    <th>Varchar(191)</th>
-                    <th>Ingresa el nombre del archivo del producto</th>
-                  </tr>
-                </table>
-              </div>
-              <div class="containerTable">
-                <h4>Borrar los datos de un proceso (Delete)</h4>
-                <button onclick="copyClipBoard('Deleteprocess','metalmecanica', '/process/delete/')">
-                  <img
-                    id="copyImg"
-                    src="images/copy-alt-svgrepo-com.svg"
-                    alt="copy"
-                  />
-                </button>
-                <a
-                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[id]"
-                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[:id]</a
-                >
-                <table>
-                  <tr>
-                    <th>Columna</th>
-                    <th>Tipo de dato</th>
-                    <th>Descripcion</th>
-                  </tr>
-                  <tr>
-                    <th>id_client</th>
-                    <th>Integer</th>
-                    <th>Ingresa el valor numerico para realizar el borrado</th>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </details>
-  
-          <!-- Hitorial de procesos-->
+          </details> -->
+
+          <!-- Historial de procesos -->
           <details id="detalle3">
             <summary>
               <div>
@@ -682,11 +552,183 @@
                     y1="371.89"
                     y2="371.89"
                   />
+                  <p>Historial de procesos</p>
                 </svg>
-                <p>Historial de procesos</p>
               </div>
             </summary>
-            <div class="container">
+            <div class="containerAPI">
+              <h3 id="Productos`">Productos</h3>
+              <p>
+                Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
+                servicio de cambios en productos, tanto para la empresa como
+                para el cliente.
+              </p>
+              <br />
+              <div class="containerTable">
+                <div id="titleAPI">
+                  <h4>Ingresar un nuevo producto` (Create)</h4>
+                  <button
+                    onclick="copyClipBoard('create new producto', 'metalmecanica', 'process/create')"
+                  >
+                    <img
+                      id="copyImg"
+                      src="images/copy-alt-svgrepo-com.svg"
+                      alt="copy"
+                    />
+                  </button>
+                </div>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/create</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <td>id_product</td>
+                    <td>Int</td>
+                    <td>Llave primaria, No null, Autoincremental</td>
+                  </tr>
+                  <tr>
+                    <td>name_product</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>price_unit</td>
+                    <td>Int</td>
+                    <td>No null</td>
+                  </tr>
+                  <tr>
+                    <td>file_name</td>
+                    <td>Varchar(191)</td>
+                    <td>No null</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar todos los procesos (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detailall</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                    <th>N/Necesario</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Buscar solo un proceso (Read)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/detail/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar la busqueda</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Actualizar los datos de un proceso (Update)</h4>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/update/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id</th>
+                    <th>Integer</th>
+                    <th>Llave primaria, no null, autoincremental</th>
+                  </tr>
+                  <tr>
+                    <th>name_product</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del producto</th>
+                  </tr>
+                  <tr>
+                    <th>price_unit</th>
+                    <th>Int</th>
+                    <th>Ingresa el precio por unidad</th>
+                  </tr>
+                  <tr>
+                    <th>file_name</th>
+                    <th>Varchar(191)</th>
+                    <th>Ingresa el nombre del archivo del producto</th>
+                  </tr>
+                </table>
+              </div>
+              <div class="containerTable">
+                <h4>Borrar los datos de un proceso (Delete)</h4>
+                <button
+                  onclick="copyClipBoard('Deleteprocess','metalmecanica', '/process/delete/')"
+                >
+                  <img
+                    id="copyImg"
+                    src="images/copy-alt-svgrepo-com.svg"
+                    alt="copy"
+                  />
+                </button>
+                <a
+                  href="https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[id]"
+                  >https://backendportfolio-r0uf.onrender.com/metalmecanica/process/delete/[:id]</a
+                >
+                <table>
+                  <tr>
+                    <th>Columna</th>
+                    <th>Tipo de dato</th>
+                    <th>Descripcion</th>
+                  </tr>
+                  <tr>
+                    <th>id_client</th>
+                    <th>Integer</th>
+                    <th>Ingresa el valor numerico para realizar el borrado</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <!-- Productos -->
+          <details id="detalle3">
+            <summary>
+              <div>
+                <svg class="iconAPI" viewBox="0 0 256 253">
+                  <path
+                    d="M122,219H76v-45h18v14h10v-14h18V219z M182,219h-46v-45h18v14h10v-14h18V219z M152,160h-46v-45h18v14h10v-14h18V160z M2,69
+    c0,13.678,9.625,25.302,22,29.576V233H2v18h252v-18h-22V98.554c12.89-3.945,21.699-15.396,22-29.554v-8H2V69z M65.29,68.346
+    c0,6.477,6.755,31.47,31.727,31.47c21.689,0,31.202-19.615,31.202-31.47c0,11.052,7.41,31.447,31.464,31.447
+    c21.733,0,31.363-20.999,31.363-31.447c0,14.425,9.726,26.416,22.954,30.154V233H42V98.594C55.402,94.966,65.29,82.895,65.29,68.346
+    z M222.832,22H223V2H34v20L2,54h252L222.832,22z"
+                  />
+                </svg>
+                <p>Productos</p>
+              </div>
+            </summary>
+            <div class="containerAPI">
               <h3 id="HistorialProcesos">Historial de Procesos</h3>
               <p>
                 Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
@@ -696,7 +738,7 @@
               <br />
               <div class="containerTable">
                 <h4>Ingresar nuevo producto (Create)</h4>
-                <a href="http://localhost:1689/metalmecanica/process/create"
+                <a href="http://localhost:1689/metalmecanica/product/create"
                   >http://localhost:1689/metalmecanica/product/create</a
                 >
                 <table>
@@ -747,7 +789,8 @@
               </div>
               <div class="containerTable">
                 <h4>Buscar solo un cliente (Read)</h4>
-                <a href="http://localhost:1689/metalmecanica/product/detail/[:id]"
+                <a
+                  href="http://localhost:1689/metalmecanica/product/detail/[:id]"
                   >http://localhost:1689/metalmecanica/product/detail/[:id]</a
                 >
                 <table>
@@ -765,7 +808,8 @@
               </div>
               <div class="containerTable">
                 <h4>Actualizar los datos de un producto (Update)</h4>
-                <a href="http://localhost:1689/metalmecanica/product/update/[id]"
+                <a
+                  href="http://localhost:1689/metalmecanica/product/update/[id]"
                   >http://localhost:1689/metalmecanica/client/product/[:id]</a
                 >
                 <table>
@@ -798,7 +842,8 @@
               </div>
               <div class="containerTable">
                 <h4>Borrar los datos de un producto (Delete)</h4>
-                <a href="http://localhost:1689/metalmecanica/product/delete/[id]"
+                <a
+                  href="http://localhost:1689/metalmecanica/product/delete/[id]"
                   >http://localhost:1689/metalmecanica/product/delete/[:id]</a
                 >
                 <table>
@@ -816,7 +861,7 @@
               </div>
             </div>
           </details>
-  
+
           <!-- Empleados -->
           <details id="detalle4">
             <summary>
@@ -836,7 +881,7 @@
                 <p>Empleados</p>
               </div>
             </summary>
-            <div class="container">
+            <div class="containerAPI">
               <h3 id="Empleados">Empleados</h3>
               <p>
                 Aquí se detalla el CRUD (Create, Read, Update, Delete) de
@@ -879,7 +924,9 @@
               </div>
               <div class="containerTable">
                 <h4>Buscar todos los empleados (Read)</h4>
-                <button onclick="copyClipBoard('readAllEmployee','metalmecanica', '/employee/detailall')">
+                <button
+                  onclick="copyClipBoard('readAllEmployee','metalmecanica', '/employee/detailall')"
+                >
                   <img
                     id="copyImg"
                     src="images/copy-alt-svgrepo-com.svg"
@@ -977,7 +1024,7 @@
               </div>
             </div>
           </details>
-  
+
           <!-- Facturas -->
           <details id="detalle5">
             <summary>
@@ -997,7 +1044,7 @@
                 <p>Facturas</p>
               </div>
             </summary>
-            <div class="container">
+            <div class="containerAPI">
               <h3 id="Bill">Facturas</h3>
               <p>
                 Aquí se detalla el CRUD (Create, Read, Update, Delete) para el
@@ -1134,7 +1181,7 @@
           </details>
         </section>
       </section>
-  
+
       <button class="btnScrollTop" id="btn_ScrollTop">
         <svg id="arrowUp" viewBox="0 0 24 24">
           <path
@@ -1144,8 +1191,6 @@
       </button>
     </div>
 
-    
-  <script src="../js/scripts.js"></script>
- 
+    <script src="../js/scripts.js"></script>
   </body>
 </html>

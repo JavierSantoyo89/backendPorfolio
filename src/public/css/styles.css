@@ -1,144 +1,231 @@
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-
+* {
+  margin: 0px;
+  padding: 0px;
+  display: flexbox;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
 }
 
-body{
-    background-image: url("../images/monterrey.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* max-height: 100vmax ; */
-    background-attachment: fixed;
-    background-color: black;
-    background-position: bottom;
-}
-#containerGeneral{
+/** ---------------------- Banner --------------------- */
+.sectionBanner{
   display: flex;
   flex-direction: column;
-  height: auto;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* gap: 20px; */
+  padding-left:  20px;
+  padding-right: 40px;
+  /* background-color: aqua; */
+.imgBanner{
+  /* width: 100vw; */
+  height: 200px;
+}}
+/** -------------------------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/monterrey.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* max-height: 100vmax ; */
+  background-attachment: fixed;
+  background-color: black;
+  background-position: bottom;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  
+}
+/** -------------- index page ----------------- */
+.containerIndex {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  /* background-color: blueviolet; */
+}
+#indexSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* background-color: brown; */
+}
+#indexProject {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  grid-gap: 10px;
+  align-items: center;
+  margin: 20px;
+  /* background-color: chartreuse; */
+}
+/** ------------------------------------------- */
+
+/** ------------------ indexMetalMecanica ----------------- */
+
+#containerGeneral {
+  display: flex;
+  flex-direction: column;
+  /* height: auto; */
+  margin: 20px;
+  /* background-color: rgb(78, 87, 84); */
 }
 
+#titleAPI {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px;
+}
+.containerAPI {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
 
+.containerTable {
+  display: flex;
 
+  a {
+    justify-content: center;
+    display: flex;
+  }
+
+  flex-direction: column;
+}
 table {
-    border: #b2b2b2 1px solid;
-    margin: 20px;
-    
-  }
-  td, th {
-    border: black 1px solid;
-    margin: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  border: #b2b2b2 1px solid;
+  margin: 20px;
+}
+td,
+th {
+  border: black 1px solid;
+  margin: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-  #readAllClient{
-    background-color: transparent;
-    border: none;
-    width:auto;
-  }
- 
-  /* #contenedorLink{
+#readAllClient {
+  background-color: transparent;
+  border: none;
+  width: auto;
+}
+
+/* #contenedorLink{
     /* display: inline-block; 
     min-width: 100px;
   } */
-  
-  #textoLink{
-    background-color: red;
-    width: 100%;
-  }
 
-  svg{
-    width: 40px;
-    height: 40px;
-  }
+#textoLink {
+  background-color: red;
+  width: 100%;
+}
+
+svg {
+  width: 40px;
+  height: 40px;
+}
 .iconAPI {
   width: 40px;
   height: 40px;
   fill: currentColor;
 }
 
-  .btnScrollTop{
-    position: fixed;
-     width: 60px;
-    height: 60px; 
-    
-    right: 20px;
-    background: rgb(166, 166, 166);
-    border-radius: 100%;
-    cursor: pointer;
-    /* transform: translate(100px); */
-    transform: scale(0);
-   
-    #arrowUp{
-      width: 50px;
-      height: 50px;
-    }
+.btnScrollTop {
+  position: fixed;
+  width: 60px;
+  height: 60px;
 
+  right: 20px;
+  background: rgb(166, 166, 166);
+  border-radius: 100%;
+  cursor: pointer;
+  /* transform: translate(100px); */
+  transform: scale(0);
+
+  #arrowUp {
+    width: 50px;
+    height: 50px;
   }
+}
 
-  
-  .btnScrollTop-on{
-    position: fixed;
-    /* width: 60px;
+.btnScrollTop-on {
+  position: fixed;
+  /* width: 60px;
     height: 60px; */
-    bottom: 60px;
-    right: 20px;
-    /* background: gray; */
-    border-radius: 100%;
-    cursor: pointer;
-    /* transform: translate(0); */
-    transform: scale(1) translate(0);
-    transition: 0.3s;
-  }
-.containerTable{
-        backdrop-filter: blur(4px) saturate(200%);
-    -webkit-backdrop-filter: blur(4px) saturate(200%);
-    background-color: rgba(116, 119, 124, 0.45);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    gap: 10px;
-    margin: 25px;
+  bottom: 60px;
+  right: 20px;
+  /* background: gray; */
+  border-radius: 100%;
+  cursor: pointer;
+  /* transform: translate(0); */
+  transform: scale(1) translate(0);
+  transition: 0.3s;
+}
+.containerTable {
+  backdrop-filter: blur(4px) saturate(200%);
+  -webkit-backdrop-filter: blur(4px) saturate(200%);
+  background-color: rgba(116, 119, 124, 0.45);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  gap: 10px;
+  margin: 25px;
 }
 
-.Services{
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 20px;
-}
-
-#servicePanel{
-  display: inline-flex;
+.Services {
+  display: flex;
   flex-direction: row;
+   flex-wrap: wrap; 
+   justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center; 
+  margin: 20px;
+}
+
+#servicePanel {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  /* align-content: center;
   justify-content: center;
-  margin-right:80px;
+  justify-items: center; */
   padding: 10px;
   gap: 50px;
+
 }
 
-
-footer{
+footer {
   background-color: black;
-align-items: center;
+  align-items: center;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: bold;
   color: white;
-    position: fixed;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 40px;
+  a {
+    color: brown;
+  }
 }
-#footerLink {
-    color:brown
+
+#copyImg {
+  width: 30px;
+  height: 3;
 }
-#copyImg{
-    width: 30px;
-    height: 3;
+button {
+  background-color: transparent;
 }
-button{
-    background-color: transparent;
-}
+
