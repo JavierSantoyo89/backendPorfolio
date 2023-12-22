@@ -1,5 +1,5 @@
 import express from 'express'
-import { metalMecanicaController } from '../components/metalMecanicaController'
+import { metalMecanicaController } from '../controller/metalMecanicaController'
 
 const metalmecanicaRoute = express.Router()
 metalmecanicaRoute.get('/', metalMecanicaController.index)

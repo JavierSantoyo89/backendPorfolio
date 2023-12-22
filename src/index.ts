@@ -10,7 +10,7 @@ import {
   restaurantRoute,
 } from "./routes";
 import morgan from 'morgan'
-import mainController from "./components/mainController";
+import mainController from "./controller//mainController";
 let dateActual =  new Date()
 
 

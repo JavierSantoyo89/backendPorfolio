@@ -1,5 +1,5 @@
 import express from 'express'
-import { curameController } from '../components/curameController'
+import { curameController } from '../controller/curameController'
 
 const curameRoute = express.Router()
 curameRoute.get('/', curameController.index)

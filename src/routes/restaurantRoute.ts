@@ -1,5 +1,5 @@
 import express from 'express'
-import { restaurantController } from '../components/restaurantController'
+import { restaurantController } from '../controller/restaurantController'
 
 const restaurantRoute = express.Router()
 
