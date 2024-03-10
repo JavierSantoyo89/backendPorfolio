@@ -67,7 +67,7 @@ model tbl_product {
 }
 
 model tbl_statistics {
-  id_statistics Int       @id
+  id_statistics Int       @id @default(autoincrement())
   status        String[]  @db.VarChar(45)
   crud          String[]  @db.VarChar(45)
   table         String[]  @db.VarChar(45)

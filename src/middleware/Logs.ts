@@ -22,11 +22,10 @@ interface Datum {
 export function Logs(
   TableName: string,
   CRUDtype: string,
-  dataQuerys: any,
-  ErrorQuery: any,
+  dataQuerys: () => void,
+  ErrorQuery: () => void,
 ) {
   console.log(TableName);
-
   async function main(TableName: string, dataQuerys: any) {
     dataQuerys;
     console.log("entro al main");
@@ -34,12 +33,12 @@ export function Logs(
   }
   main(TableName, dataQuerys)
     .then(async () => {
-      const ok  = await prisma.tbl_statistics.create({
-        data : {
-          status: "Ok" as any,
-          crud: CRUDtype as any,
-          table: TableName as any,
-          project: "Metal-Mecanica" as any,
+      const ok  = await prisma.tbl_statistics.create ({
+        data :  {
+          status: "Ok",
+          crud: CRUDtype,
+          table: TableName,
+          project: "Metal-Mecanica" ,
           datetime: dateActual,
         } as any,
       });
@@ -50,10 +49,10 @@ export function Logs(
       ErrorQuery;
       const fail = await prisma.tbl_statistics.create({
         data: {
-          status: "Fail" as any,
+          status: "Fail" as string,
           crud: CRUDtype  as any,
-          table: TableName as any,
-          project: "Metal-Mecanica" as any,
+          table: TableName as string,
+          project: "Metal-Mecanica" as string,
           datetime: dateActual,
         } as any,
       });
