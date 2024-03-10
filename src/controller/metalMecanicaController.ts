@@ -26,7 +26,7 @@ export const metalMecanicaController = {
     Logs(TableName, CRUDtype, dataQuerys, ErrorQuery);
     dataQuerys = res
       .json({
-        data: await prisma.tblclient.create({
+        data: await prisma.tbl_client.create({
           data: req.body,
         }),
         create: "OK",
@@ -40,8 +40,8 @@ export const metalMecanicaController = {
     TableName = "tblclient";
     dataQuerys = res
       .json({
-        data: await prisma.tblclient.findMany(),
-        count: await prisma.tblclient.count(),
+        data: await prisma.tbl_client.findMany(),
+        count: await prisma.tbl_client.count(),
         SearchAll: "Ok",
       })
       .status(200);
@@ -58,7 +58,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblclient.findFirst({
+          data: await prisma.tbl_client.findFirst({
             where: { id_client: Number(Id) },
           }),
           findOne: "Ok",
@@ -82,7 +82,7 @@ export const metalMecanicaController = {
       let Id = +req.params.id;
       dataQuerys = res
         .json({
-          data: await prisma.tblclient.delete({
+          data: await prisma.tbl_client.delete({
             where: { id_client: Number(Id) },
           }),
           delete: "Ok",
@@ -107,7 +107,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblclient.update({
+          data: await prisma.tbl_client.update({
             where: { id_client: Number(Id) },
             data: req.body,
           }),
@@ -131,7 +131,7 @@ export const metalMecanicaController = {
   createEmployee: async (req: Request, res: Response) => {
     dataQuerys = res
       .json({
-        data: await prisma.tblemployee.create({
+        data: await prisma.tbl_employee.create({
           data: req.body,
         }),
         create: "OK",
@@ -146,8 +146,8 @@ export const metalMecanicaController = {
     CRUDtype = "Read all records";
     dataQuerys = res
       .json({
-        data: await prisma.tblemployee.findMany(),
-        count: await prisma.tblemployee.count(),
+        data: await prisma.tbl_employee.findMany(),
+        count: await prisma.tbl_employee.count(),
         SearchAll: "Ok",
       })
       .status(200);
@@ -163,7 +163,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblemployee.findFirst({
+          data: await prisma.tbl_employee.findFirst({
             where: { id_employee: Number(Id) },
           }),
           findOne: "Ok",
@@ -187,7 +187,7 @@ export const metalMecanicaController = {
       let Id = +req.params.id;
       dataQuerys = res
         .json({
-          data: await prisma.tblemployee.delete({
+          data: await prisma.tbl_employee.delete({
             where: { id_employee: Number(Id) },
           }),
           delete: "Ok",
@@ -212,7 +212,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblemployee.update({
+          data: await prisma.tbl_employee.update({
             where: { id_employee: Number(Id) },
             data: req.body,
           }),
@@ -236,7 +236,7 @@ export const metalMecanicaController = {
   createProcess: async (req: Request, res: Response) => {
     dataQuerys = res
       .json({
-        data: await prisma.tblprocess.create({
+        data: await prisma.tbl_process.create({
           data: req.body,
         }),
         create: "OK",
@@ -251,8 +251,8 @@ export const metalMecanicaController = {
     CRUDtype = "Read all records";
     dataQuerys = res
       .json({
-        data: await prisma.tblprocess.findMany(),
-        count: await prisma.tblprocess.count(),
+        data: await prisma.tbl_process.findMany(),
+        count: await prisma.tbl_process.count(),
         SearchAll: "Ok",
       })
       .status(200);
@@ -268,7 +268,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados) && Number(Id) > 0) {
       dataQuerys = res
         .json({
-          data: await prisma.tblprocess.findFirst({
+          data: await prisma.tbl_process.findFirst({
             where: { id_process: Number(Id) },
           }),
           findOne: "Ok",
@@ -292,7 +292,7 @@ export const metalMecanicaController = {
       let Id = +req.params.id;
       dataQuerys = res
         .json({
-          data: await prisma.tblprocess.delete({
+          data: await prisma.tbl_process.delete({
             where: { id_process: Number(Id) },
           }),
           delete: "Ok",
@@ -316,7 +316,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblprocess.update({
+          data: await prisma.tbl_process.update({
             where: { id_process: Number(Id) },
             data: req.body,
           }),
@@ -340,7 +340,7 @@ export const metalMecanicaController = {
   createProduct: async (req: Request, res: Response) => {
     dataQuerys = res
       .json({
-        data: await prisma.tblproduct.create({
+        data: await prisma.tbl_product.create({
           data: req.body,
         }),
         create: "OK",
@@ -355,8 +355,8 @@ export const metalMecanicaController = {
     CRUDtype = "Read all records";
     dataQuerys = res
       .json({
-        data: await prisma.tblproduct.findMany(),
-        count: await prisma.tblproduct.count(),
+        data: await prisma.tbl_product.findMany(),
+        count: await prisma.tbl_product.count(),
         SearchAll: "Ok",
       })
       .status(200);
@@ -372,7 +372,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblproduct.findFirst({
+          data: await prisma.tbl_product.findFirst({
             where: { id_product: Number(Id) },
           }),
           findOne: "Ok",
@@ -396,7 +396,7 @@ export const metalMecanicaController = {
       let Id = +req.params.id;
       dataQuerys = res
         .json({
-          data: await prisma.tblproduct.delete({
+          data: await prisma.tbl_product.delete({
             where: { id_product: Number(Id) },
           }),
           delete: "Ok",
@@ -420,7 +420,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblproduct.update({
+          data: await prisma.tbl_product.update({
             where: { id_product: Number(Id) },
             data: req.body,
           }),
@@ -444,7 +444,7 @@ export const metalMecanicaController = {
   createFacture: async (req: Request, res: Response) => {
     dataQuerys = res
       .json({
-        data: await prisma.tblbill.create({
+        data: await prisma.tbl_bill.create({
           data: req.body,
         }),
         create: "OK",
@@ -459,8 +459,8 @@ export const metalMecanicaController = {
     CRUDtype = "Read all records";
     dataQuerys = res
       .json({
-        data: await prisma.tblbill.findMany(),
-        count: await prisma.tblbill.count(),
+        data: await prisma.tbl_bill.findMany(),
+        count: await prisma.tbl_bill.count(),
         SearchAll: "Ok",
       })
       .status(200);
@@ -476,7 +476,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblbill.findFirst({
+          data: await prisma.tbl_bill.findFirst({
             where: { id_bill: Number(Id) },
           }),
           findOne: "Ok",
@@ -500,7 +500,7 @@ export const metalMecanicaController = {
       let Id = +req.params.id;
       dataQuerys = res
         .json({
-          data: await prisma.tblbill.delete({
+          data: await prisma.tbl_bill.delete({
             where: { id_bill: Number(Id) },
           }),
           delete: "Ok",
@@ -524,7 +524,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados && Id > 0)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblbill.update({
+          data: await prisma.tbl_bill.update({
             where: { id_bill: Number(Id) },
             data: req.body,
           }),
@@ -548,7 +548,7 @@ export const metalMecanicaController = {
   createHistory: async (req: Request, res: Response) => {
     dataQuerys = res
       .json({
-        data: await prisma.tblhistoryprocess.create({
+        data: await prisma.tbl_history_process.create({
           data: req.body,
         }),
         create: "OK",
@@ -563,8 +563,8 @@ export const metalMecanicaController = {
     CRUDtype = "Read all records";
     dataQuerys = res
       .json({
-        data: await prisma.tblhistoryprocess.findMany(),
-        count: await prisma.tblhistoryprocess.count(),
+        data: await prisma.tbl_history_process.findMany(),
+        count: await prisma.tbl_history_process.count(),
         SearchAll: "Ok",
       })
       .status(200);
@@ -580,7 +580,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblhistoryprocess.findFirst({
+          data: await prisma.tbl_history_process.findFirst({
             where: { id_history_process: Number(Id) },
           }),
           findOne: "Ok",
@@ -604,7 +604,7 @@ export const metalMecanicaController = {
       let Id = +req.params.id;
       dataQuerys = res
         .json({
-          data: await prisma.tblhistoryprocess.delete({
+          data: await prisma.tbl_history_process.delete({
             where: { id_history_process: Number(Id) },
           }),
           delete: "Ok",
@@ -628,7 +628,7 @@ export const metalMecanicaController = {
     if (Id.match(valoresAceptados && Id > 0)) {
       dataQuerys = res
         .json({
-          data: await prisma.tblhistoryprocess.update({
+          data: await prisma.tbl_history_process.update({
             where: { id_history_process: Number(Id) },
             data: req.body,
           }),
