@@ -20,8 +20,8 @@ const mainController = {
   },
   stadistics: async(_req: Request, res: Response) => {
     async function main() {
-      const allStadistics = await prisma.tblstadistics.findMany();
-      const countStadistics = await prisma.tblstadistics.count()
+      const allStadistics = await prisma.tbl_statistics.findMany();
+      const countStadistics = await prisma.tbl_statistics.count()
       res.json({ data: allStadistics, count: countStadistics, SearchAll: "Ok" }).status(200);
       console.log("Read all stadistics complete!!!");
     }

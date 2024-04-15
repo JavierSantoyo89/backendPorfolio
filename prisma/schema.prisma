@@ -3,66 +3,74 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model tblbill {
-  id_bill         Int      @id @default(autoincrement())
-  folio           String
-  no_orden_compra String
-  emition_date    DateTime
-  date_in         DateTime
-  date_out        DateTime
+model tbl_bill {
+  id_bill         Int      @id
+  folio           String[] @db.VarChar(191)
+  no_orden_compra String[] @db.VarChar(191)
+  emition_date    DateTime @db.Timetz(6)
+  date_in         DateTime @db.Timetz(6)
+  date_out        DateTime @db.Timetz(6)
   id_client       Int
   id_product      Int
   qty_finish      Int
 }
 
-model tblclient {
-  id_client   Int    @id @default(autoincrement())
-  company     String
-  rfc         String
-  address     String
-  cp          String
-  tel         String
-  telcel      String
-  fiscal_mode String
+model tbl_client {
+  id_client   Int      @id
+  company     String[] @db.VarChar(191)
+  rfc         String[] @db.VarChar(191)
+  address     String[] @db.VarChar(191)
+  cp          String[] @db.VarChar(191)
+  tel         String[] @db.VarChar(191)
+  telcel      String[] @db.VarChar(191)
+  fiscal_mode String[] @db.VarChar(191)
 }
 
-model tblemployee {
-  id_employee Int    @id @default(autoincrement())
-  user_name   String
-  user_type   String
+model tbl_employee {
+  id_employee Int      @id
+  user_name   String[] @db.VarChar(191)
+  user_type   String[] @db.VarChar(191)
 }
 
-model tblhistoryprocess {
-  id_history_process   Int      @id @default(autoincrement())
-  name_history_process String
+model tbl_history_process {
+  id_history_process   Int      @id
+  name_history_process String[] @db.VarChar(191)
   qty                  Int
-  date_history_process DateTime
-  id_user              Int
+  date_hisotry_process DateTime @db.Timestamptz(6)
+  id_employee          Int
 }
 
-model tblprocess {
-  id_process         Int    @id @default(autoincrement())
-  name_process       String
+model tbl_perfil {
+  id_perfil   Int      @id
+  id_client   Int
+  id_employee Int
+  email       String[] @db.VarChar(191)
+  password    String[] @db.VarChar(191)
+}
+
+model tbl_process {
+  id_process         Int      @id
+  name_process       String[] @db.VarChar(191)
   id_history_process Int
 }
 
-model tblproduct {
-  id_product   Int    @id @default(autoincrement())
-  name_product String
+model tbl_product {
+  id_product   Int      @id
+  name_product String[] @db.VarChar(191)
   id_process   Int
-  file_name    String
-  price_unit   Int
+  file_name    String[] @db.VarChar(191)
+  price_unit   Decimal? @db.Money
 }
 
-model tblstadistics {
-  id_stadistics Int       @id @default(autoincrement())
-  status        String?   @db.VarChar(45)
-  crud          String?   @db.VarChar(45)
-  table         String?   @db.VarChar(45)
-  project       String?   @db.VarChar(45)
-  datetime      DateTime? @db.DateTime(0)
+model tbl_statistics {
+  id_statistics Int       @id @default(autoincrement())
+  status        String[]  @db.VarChar(45)
+  crud          String[]  @db.VarChar(45)
+  table         String[]  @db.VarChar(45)
+  project       String[]  @db.VarChar(45)
+  datetime      DateTime? @db.Timetz(6)
 }
